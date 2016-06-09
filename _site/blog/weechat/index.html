@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>WeeChat - Um cliente IRC CLI | Gurpreet Singh</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/css/bootstrap-3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    <script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-69613510-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+
+    <link rel="shortcut icon" href="/images/favicon.jpg">
+
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/feed/"> 
+
+</head>
+
+
+    <body>
+      <div class="container">
+
+        <header class="row">
+  <div class="col-lg-8 col-lg-offset-2">
+    <h1 class="">Gurpreet Singh</h1>
+    <p>
+    <span class="reserved">char</span> nick[<span class="number">9</span>] = <span class="string">"Gurpreet Singh"</span>;
+    </p>
+    <p>
+    printf(<a href="https://github.com/guppster" target="_blank"><span class="string">"https://github.com/<span class="reserved">%s\n</span>"</span></a>,nick);
+    </p>
+    <p>
+    printf(<span class="string">"<span class="reserved">%s\x40</span>protonmail<span class="reserved">\x2e\\\b</span>ch<span class="reserved">\n</span>"</span>,nick);
+    </p>
+    <!-- <p>
+            printf(<a href="https://guppster.wordpress.com" target="_blank"><span class="string">"https://<span class="reserved">%s</span>.wordpress.com<span class="reserved">\n</span>"</span></a>,nick);
+        </p> -->
+    <p>
+    puts(<a href="/misc/pubkey.gpg.txt" target="_blank"><span class="string">"5E12 9ABC C2A9 564B C048  2DF9 D327 0D10 BC71 CF75"</span></a>);
+    </p>
+  </div>
+</header>
+
+<div class="row">
+  <div class="col-lg-8 col-lg-offset-2">
+    <div class="menu">
+      <ul>
+          <li><a href="/">home</a></li>
+          <li><a href="/blog/">blog</a></li>
+          <li><a href="/books/">books</a></li>
+          <li><a href="/casts">*casts</a></li>
+          <li><a href="/movies">movies</a></li>
+          <li><a href="/talks">talks</a></li>
+          <li><a href="/zines">*zines</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2">
+            <main>
+            <div class="post">
+
+  <header class="post-header">
+    <h1>WeeChat - Um cliente IRC CLI</h1>
+  </header>
+
+  <article class="post-content">
+  <div class="post">
+
+  <header class="post-header">
+    <p class="meta">
+        Jun 18, 2015
+        
+        
+        •
+        <span><a href="/category/#linux" class="reserved">linux</a>,</span><span><a href="/category/#terminal" class="reserved">terminal</a>,</span><span><a href="/category/#cli lindo!" class="reserved">cli lindo!</a></span>
+    </p>
+  </header>
+
+  <article class="post-content">
+  <blockquote>
+  <p><strong>OBS:</strong> Esse é um tipo de postagem que acho interessante de se fazer aqui. Será uma série de posts (mas nada periodicamente) que abordará ferramentas CLI.</p>
+</blockquote>
+
+<p>Começando com um breve sumário, nesse artigo haverá:</p>
+
+<ol>
+  <li>Registro de nick</li>
+  <li>Registro de canal</li>
+  <li>Instalação do WeeChat</li>
+  <li>Sobre o WeeChat</li>
+  <li>Usando o programa
+    <ol>
+      <li>Conseguindo ajuda</li>
+      <li>Configuração</li>
+      <li>Comandos básicos</li>
+    </ol>
+  </li>
+  <li>Alternativas</li>
+  <li>Observações</li>
+</ol>
+
+<!--more-->
+
+<blockquote>
+  <p><strong>P.S.:</strong> Para esse artigo vou usar o provedor <a href="http://freenode.net">FreeNode</a> para os registros e conexão, mas as coisas não mudam se quiser utilizar outro, como o <a href="http://www.brasirc.org/">BrasIRC</a>.</p>
+</blockquote>
+
+<h2 id="registro-de-nick">Registro de nick</h2>
+
+<p>Como já foi dito, usei o FreeNode para testes (pois uso mais ele e assim, se tornou mais cômodo), mas os comandos são os mesmos. E a forma de o provedor trabalhar também.</p>
+
+<p>Primeiramente, você precisará entrar no servidor para poder registrar. Eu até pensei em na ordem colocar esse passo depois da conexão, mas decidi pôr antes pois a conexão é bem simples. Se quiser ir rapidinho na parte <strong>Alternativas</strong> você poderá conectar pelo navegador, e realizar esses passos seguintes numa boa.</p>
+
+<p>Após conectado no servidor, você precisará requisitar o registro. Uma coisa que se deve salientar: no FreeNode, um nick registrado que fique dez semanas sem usar poderá ser registrado por outra pessoa. Se o nick que você quer registrar já tem dono mas está um bom tempo sem uso, pode entrar em contato com o provedor que eles provavelmente liberarão rapidinho para você.</p>
+
+<p>Para ter essa informação sobre determinado nick, use o seguinte comando:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>/msg nickserv info nick_a_consultar
+</code></pre>
+</div>
+
+<p>Visto se o nick que deseja está livre (ou poderá se tornar) vamos prosseguindo, adotando que o apelido desejado pode ser registrado logo. Pode ser que você logou no sistema com um nick que não deseja registrar, para mudar para o que quer, use o comando:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>/nick nick_desejado
+</code></pre>
+</div>
+
+<p>Depois disso, para registrar, basta usar o seguinte comando:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>/msg nickserv register senha_desejada e-mail_para_registro
+</code></pre>
+</div>
+
+<blockquote>
+  <p><strong>IMPORTANTE!</strong> Não deixe de colocar uma senha segura e um e-mail válido. O provedor vai enviar uma mensagem para você com um comando para validar o registro. Esse comando terá uma validade de 24 horas, e passado esse tempo, o nick que tentou registrar estará disponível novamente para qualquer pessoa.</p>
+</blockquote>
+
+<p>Ok! Pode verificar o e-mail que lá terá uma mensagem com o comando que tem de usar para ativar realmente o registro!</p>
+
+<p>Pronto… Tem uma determinada opção que é interessante de você usar. Quando registra o apelido, você tem de usar um e-mail válido, e esse endereço pode ficar público para qualquer um verificar (a partir do comando de informação visto acima). Você pode deixar ele escondido, com o comando:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>/msg nickserver set hidemail on
+</code></pre>
+</div>
+
+<h2 id="registro-de-canal">Registro de canal</h2>
+
+<p>Ótimo! Registramos nosso nick, agora vejamos como registrar um canal. Assim, terá um ponto para conectar com a sua galera para conversarem numa boa.</p>
+
+<p>Para registrar, assim como com o nick, o canal tem de estar livre para isso. O comando que verifica essa informação é o seguinte:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>/msg chanserv info #canal_desejado
+</code></pre>
+</div>
+
+<p>Retornará algumas informações sobre o canal, em caso de já registrado, em caso de livre, irá mostrar uma mensagem para você.</p>
+
+<blockquote>
+  <p><strong>P.S.:</strong> Não tenho informações se equivale a mesma regra do nick, de que com um determinado tempo vocễ pode registrar em seu nome.</p>
+</blockquote>
+
+<p>Feito isso, imaginemos que está disponível para o registro, vamos usar o comando:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>/msg chanserv register #canal_desejado
+</code></pre>
+</div>
+
+<p><strong>Perfeito!!</strong> Nesse momento já temos o canal e o nick registrado!</p>
+
+<p>Se você sair e entrar no servidor e em seu canal, notará que “perdeu” o privilégio de administrador. Para se tornar novamente o operador e ter as permissões, execute:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>/msg chanserv op #canal_desejado
+</code></pre>
+</div>
+
+<p>Se você quiser dar permissão de operador para mais alguma pessoa, execute o mesmo comando, mas com um último parâmetro, o nick dela:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>/msg chanserv op #canal_desejado nick_para_operador
+</code></pre>
+</div>
+
+<h2 id="instalao-do-weechat">Instalação do WeeChat</h2>
+
+<p>Bom, a instalação é bem simples, visto que ele está nos repositórios das principais distribuições por ai. Portanto:</p>
+
+<ul>
+  <li>Debian: <code class="highlighter-rouge">sudo apt-get install weechat -y</code></li>
+  <li>Arch: <code class="highlighter-rouge">sudo pacman -S weechat</code></li>
+  <li>Fedora: <code class="highlighter-rouge">sudo yum install weechat</code></li>
+  <li>Slackware: <a href="http://slackbuilds.org/repository/14.1/network/weechat/">SlackBuilds</a></li>
+</ul>
+
+<p>Se a distribuição que você usa não deriva de nenhuma dessas, verifique em seu gerenciador de pacotes que provavelmente irá achar. Se não encontrar, acesse a <a href="https://weechat.org/download/stable/">página</a> do software referente a isso.</p>
+
+<p>Após instalado, já podemos abrir o programa:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ weechat
+</code></pre>
+</div>
+
+<h2 id="sobre-o-weechat">Sobre o WeeChat</h2>
+
+<p>Na <a href="http://weechat.org/">página inicial do WeeChat</a> ou nas páginas de documentação você verá isso, mas vou adiantando logo uma breve descriçã  sobre o programa…</p>
+
+<p>WeeChat é um ótimo cliente IRC para o console. Rápido, simples, limpo, extensível… Você dispõe de vários plugins para incrementar ainda mais as funcionalidades. Pode implementar mais features com C, Python, Perl, Ruby, Lua, Tcl, Scheme e JavaScript.</p>
+
+<p>Ou seja, é demais! Além de que é um projeto bem ativo! Principalmente por ser free com a licença GPLv3, galera cai encima contribuindo!</p>
+
+<h2 id="usando-o-programa">Usando o programa</h2>
+
+<p>Essa parte será dividida em três, teoricamente. A primeira, será a respeito de como conseguir ajuda no WeeChat, a segunda, vou mostrar como usar e configurar mesmo, por fim, na terceira, mostrarei alguns comandos básicos e essenciais de se saber.</p>
+
+<h3 id="conseguindo-ajuda-no-weechat">Conseguindo ajuda no WeeChat</h3>
+
+<p>Vejamos… O WeeChat conta com os manuais de documentação corretamente, portanto, já pode começar obtendo informações com os comandos:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ man weechat
+$ info weechat
+$ weechat -h
+</code></pre>
+</div>
+
+<p>Ou então no site do programa. Veja esse <a href="http://weechat.org/files/doc/stable/weechat_quickstart.en.html">guia</a>, por exemplo.</p>
+
+<p>Dentro do programa ainda é possível utilizar o comando <code class="highlighter-rouge">/help</code> para obter ajuda. Após executar o <code class="highlighter-rouge">/help</code> verá algumas classificações e uma lista de comandos. Por exemplo, dentro da categoria <strong>IRC</strong> tem <em>admin, topic</em> e muitos outros. Digamos, então, que quero saber sobre o <em>topic</em>, basta executar:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>/help topic
+</code></pre>
+</div>
+
+<p>Certo! Já sabemos como conseguir ajuda, portanto, já temos a possibilidade de nos desembolar no programa. Agora, vamos à configuração…</p>
+
+<h3 id="configurao">Configuração</h3>
+
+<p>É interessante que rode o comando <code class="highlighter-rouge">/help server</code> para ver mais opções e se familiarizar já com algumas. Após lido o que foi exibido com o comanodo acima, vamos configurar.</p>
+
+<p>Você pode listar os servidores que já tenha configurado, com os comandos:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>/server list
+/server listfull
+</code></pre>
+</div>
+
+<p>O primeiro mostra apenas uma breve lista, enquanto o outro mostra uma bem mais completa e que irá nos ajudar mais para frente. Como para você provavelmente não apareça nada, você pode olhar novamente após configurarmos.</p>
+
+<p>Com o comando <code class="highlighter-rouge">/server</code> é possível fazer várias coisas no âmbito dos servidores, como adicionar, renomear, remover… Executando um <code class="highlighter-rouge">/help server</code> você consegue entender bem quase todos os comandos, portanto, vou pular logo para a parte de configuração.</p>
+
+<p>A sintaxe básica do comando é: <em>/server add ‹server› ‹hostname›[/‹port›]</em></p>
+
+<p>Então, precisamos ter as informações do servidor, como o hostname e a porta para conectarmos. <a href="http://freenode.net/irc_servers.shtml">Visite essa página</a> do FreeNode e escolha o que quiser.</p>
+
+<blockquote>
+  <p><strong>P.S.:</strong> Eu decidi escolher o servidor <code class="highlighter-rouge">leguin.freenode.net</code> pois tenho uma certa simpatia com a Suécia quando se trata de privacidade. A porta eu escolhi a 6697 pois ela só aceita conexão SSL, assim, incrementando mais no quezito segurança.</p>
+</blockquote>
+
+<p>Feitas as escolhas, vamos lá!</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>/server add freenode leguin.freenode.net/6697
+</code></pre>
+</div>
+
+<p>Pronto! Já temos configurado! Sério mesmo. Mas muito básico, claro. Se quiser conectar, já pode, basta usar <code class="highlighter-rouge">/connect freenode</code>.</p>
+
+<p>Mas vamos continuar nossa configuração… Lembra que mais acima eu disse que o <code class="highlighter-rouge">listfull</code> iria nos ajudar? Pois bem… Vamos executar ele:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>/server listfull freenode
+</code></pre>
+</div>
+
+<p>Veja a quantidade de opções que tem! Cada uma dessas pode ser personalizada para uma melhor experiência. Para isso, só precisamos usar o comando da seguinte forma:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>/set irc.server.freenode.opcao valor
+</code></pre>
+</div>
+
+<p>E tem alguns que recomendo que defina. Vou fazer uma lista e ao lado uma breve descrição sobre cada opção:</p>
+
+<ul>
+  <li><strong>ssl</strong> - <em>indica se deve usar ou não o modo ssl. Bom deixar on</em></li>
+  <li><strong>sasl_username</strong> - <em>nick do seu usuário que definimos no registro</em></li>
+  <li><strong>sasl_password</strong> - <em>senha do seu usuário que definimos no registro</em></li>
+  <li><strong>autoconect</strong> - <em>define se ao iniciar o WeeChat já se deve conectar a esse servidor</em></li>
+  <li><strong>username</strong> - <em>nome do usuário no servidor</em></li>
+  <li><strong>password</strong> - <em>senha do usuário no servidor</em></li>
+  <li><strong>realname</strong> - <em>nome real do usuário</em></li>
+  <li><strong>autojoin</strong> - <em>indica os canais que já deve entrar ao conectar com o servidor (sintaxe: <code class="highlighter-rouge">#canal1,#canal2,#canal3...</code>)</em></li>
+</ul>
+
+<blockquote>
+  <p><strong>P.S.:</strong> SASL (Simple Authentication and Security Layer), que mostrei ali acima se trata de uma forma de autenticação que já será feita automaticamente para poder acessar o provedor logado corretamente.</p>
+</blockquote>
+
+<h3 id="comandos-bsicos">Comandos básicos</h3>
+
+<p>Como se trata de um cliente de IRC e ainda mais CLI, usar o mouse nele (diretamente) é impossível, portanto, o programa deve ser utilizado atravéz de comandos. Vejamos alguns…</p>
+
+<ul>
+  <li><code class="highlighter-rouge">/quit</code> - <em>fecha o programa</em></li>
+  <li><code class="highlighter-rouge">/exit</code> - <em>fecha o programa</em></li>
+  <li><code class="highlighter-rouge">/close</code> - <em>fecha o buffer atual, seja um canal ou uma conversa privada</em></li>
+  <li><code class="highlighter-rouge">/q nick</code> - <em>abre um novo buffer para conversa em privada com <strong>nick</strong></em></li>
+  <li><code class="highlighter-rouge">/server jump</code> - <em>vai para o buffer principal do programa</em></li>
+  <li><code class="highlighter-rouge">/buffer</code> - <em>exibe a lista de buffers (pode ser lido como abas) abertos</em></li>
+  <li><code class="highlighter-rouge">/buffer 3</code> - <em>vai até o buffer três, podendo ser uma conversa privada, um canal ou até um buffer de log de um servidor</em></li>
+</ul>
+
+<p>Esses são os comandos mais básico a serem utilizados. Os demais que forem precisando vai se aprendendo com o tempo, até pelo motivo de que não iria aprender todos os comandos lendo dessa forma, somente praticando.</p>
+
+<h2 id="alternativas">Alternativas</h2>
+
+<p>Como nem todos gostam de CLI e eu reconheço que sou um tanto quanto hipster em relação a isso, vou deixar algumas recomendações legais também…</p>
+
+<p>Para web, utilizando o navegador:</p>
+
+<ul>
+  <li><a href="http://webchat.freenode.net/">WebChat Freenode</a> - Uma interface web para se conectar aos servidores do provedor FreeNode;</li>
+  <li><a href="https://kiwiirc.com/client/leguin.freenode.net">KiwiIRC</a> - Uma interface web que pode conectar com vários servidores, basta mudar na URL. Trocar o servidor da FreeNode que coloquei e pôr um que deseje em seu lugar;</li>
+</ul>
+
+<p>Gráfico:</p>
+
+<ul>
+  <li><a href="https://pidgin.im/">Pidgin</a> - Já usei um tempo atrás, gostava muito. Ele aceita não só IRC, mas também GTalk e muitos outros;</li>
+  <li><a href="https://hexchat.github.io/">Hexchat</a> - Nunca utilizei esse mas quem conheço que usa fala bastante bem;</li>
+</ul>
+
+<p>CLI:</p>
+
+<ul>
+  <li><a href="http://www.irssi.org/">IRSSI</a> - Cheguei a usar um tempo atrás, mas, em minha opinião, o WeeChat deixa ele para trás quando se trata de algumas configurações simples;</li>
+</ul>
+
+<h2 id="observaes">Observações</h2>
+
+<p>São breves observações que quero deixar para o pessoal:</p>
+
+<p>Ambiente de testes:</p>
+
+<ul>
+  <li>Arch Linux 4.0.4-2-ARCH</li>
+  <li>WeeChat v1.2</li>
+  <li>Rede <a href="http://freenode.net">FreeNode</a></li>
+</ul>
+
+<p>Esse é um artigo que serve como pontapé ou rápida consulta para quem lê-lo. Para aprender a usar mais o WeeChat ou o IRC, documentação sobre é o que não falta. Boa parte em inglês, claro. Com o tempo vou tentando fazer mais artigos nesse estilo para contribuir da forma que puder.</p>
+
+<p>Se tiver algo a contribuir, agradeço bastante! Compartilhar conhecimento é a melhor forma de obter mais :)
+Portanto, comente, compartilhe e toda essa zorra mais.</p>
+
+<blockquote>
+  <p><strong>P.S.:</strong> Esse artigo pode sofrer atualizações sem aviso prévio, portanto, melhor assinar o blog :)</p>
+</blockquote>
+
+  </article>
+
+	<p class="feed-recomendation">
+		Gostou do post? Assina o <a href="/feed/">feed</a> e seja feliz!!
+	</p>
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'Gurpreet Singh';
+    var disqus_config = function () {
+        this.page.identifier = "/blog/weechat/";
+    };
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+
+</div>
+
+  </article>
+
+</div>
+
+            </main>
+          </div>
+        </div>
+
+        <div class="row">
+  <div class="col-lg-8 col-lg-offset-2">
+    <footer>
+      Thx!
+    </footer>
+  </div>
+</div>
+
+
+      </div>
+    </body>
+</html>

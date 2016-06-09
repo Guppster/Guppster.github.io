@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gurpreet Singh</title>
+    <description></description>
+    <link>https://guppster.github.io//</link>
+    <atom:link href="https://guppster.github.io//feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Thu, 09 Jun 2016 19:49:11 -0400</pubDate>
+    <lastBuildDate>Thu, 09 Jun 2016 19:49:11 -0400</lastBuildDate>
+    <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>Palestra :: Segurança em DNS - Entenda as principais brechas</title>
+        <description>&lt;h2 id=&quot;descrio&quot;&gt;Descrição&lt;/h2&gt;
+
+&lt;p&gt;Palestra que busca esmiuçar os principais vetores de ataque que conhecemos quando se fala de DNS, ou seja, ir além do how to. Mostrar um básico sobre o serviço para que entenda seu funcionamento e compreenda por completo o real envoltório das falhas.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Antes de mais nada, já fica a recomendação para ver como preparatório a palestra &lt;a href=&quot;/talks/dns-o-que-voce-precisa-saber/&quot;&gt;DNS - O que você precisa saber [0]&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;tpicos&quot;&gt;Tópicos&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Básico sobre DNS&lt;/li&gt;
+  &lt;li&gt;DNS contornando obstáculos de segurança
+    &lt;ul&gt;
+      &lt;li&gt;Bypass de IDS/IPS&lt;/li&gt;
+      &lt;li&gt;DNS Tunnelling&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Falhas que envolvem DNS
+    &lt;ul&gt;
+      &lt;li&gt;Zone transfer&lt;/li&gt;
+      &lt;li&gt;DNS recursivos abertos&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;eventos&quot;&gt;Eventos&lt;/h2&gt;
+
+&lt;p&gt;Palestra feita para o &lt;a href=&quot;http://roadsec.com.br/aracaju2016/&quot;&gt;Roadsec Aracaju 2016 [1]&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;slide&quot;&gt;Slide&lt;/h2&gt;
+
+&lt;p&gt;Você pode acessar o slide em PDF dessa palestra &lt;a href=&quot;https://lampiaosec.github.io/talks/seguranca-em-dns-entenda-as-principais-brechas.pdf&quot;&gt;clicando aqui [2]&lt;/a&gt; ou indo ao site do &lt;a href=&quot;https://lampiaosec.github.io/#talks&quot;&gt;LampiãoSec [3]&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;links&quot;&gt;Links&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[0]: /talks/dns-o-que-voce-precisa-saber/
+[1]: http://roadsec.com.br/aracaju2016/
+[2]: https://lampiaosec.github.io/talks/seguranca-em-dns-entenda-as-principais-brechas.pdf
+[3]: https://lampiaosec.github.io/#talks
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Mon, 06 Jun 2016 00:00:00 -0400</pubDate>
+        <link>https://guppster.github.io//talks/seguranca-em-dns/</link>
+        <guid isPermaLink="true">https://guppster.github.io//talks/seguranca-em-dns/</guid>
+        
+        <category>dns</category>
+        
+        <category>redes</category>
+        
+        <category>segurança</category>
+        
+        <category>talks</category>
+        
+        
+        <category>talks</category>
+        
+      </item>
+    
+      <item>
+        <title>Palestra :: Você Precisa da Comunidade e Ela de Você</title>
+        <description>&lt;h2 id=&quot;descrio&quot;&gt;Descrição&lt;/h2&gt;
+
+&lt;p&gt;Comunidades é algo estremamente importante, tanto para carreira profissional de alguém como também (e principalmente) para a formação como cidadão desse indivíduo. Saber trabalhar em equipe, ter aquela proatividade de fazer algo em prol do coletivo, essas são coisas muito esperadas em pessoas num modo geral. E olha, se envolver com comunidades é uma ótima forma de aperfeiçoar isso.&lt;/p&gt;
+
+&lt;h2 id=&quot;tpicos&quot;&gt;Tópicos&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Importância da comunidade&lt;/li&gt;
+  &lt;li&gt;Benefícios de se envolver&lt;/li&gt;
+  &lt;li&gt;Como contribuir&lt;/li&gt;
+  &lt;li&gt;Por onde começar&lt;/li&gt;
+  &lt;li&gt;Dicas para tomada de ação&lt;/li&gt;
+  &lt;li&gt;Casos de sucesso!!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;eventos&quot;&gt;Eventos&lt;/h2&gt;
+
+&lt;p&gt;Palestra feita para o &lt;a href=&quot;https://github.com/phpba/phpeetups/blob/gh-pages/eventos_passados.md#2-phpeetup&quot;&gt;2º PHPeetup [0]&lt;/a&gt;, organizado pelo &lt;a href=&quot;http://phpba.com.br&quot;&gt;PHPBA [1]&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;slide&quot;&gt;Slide&lt;/h2&gt;
+
+&lt;p&gt;Acesse a apresentação &lt;a href=&quot;/talks/voce-precisa-da-comunidade/apresentacao.html&quot;&gt;clicando aqui [2]&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;links&quot;&gt;Links&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[0]: https://github.com/phpba/phpeetups/blob/gh-pages/eventos_passados.md#2-phpeetup
+[1]: http://phpba.com.br
+[2]: /talks/voce-precisa-da-comunidade/apresentacao.html
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Sat, 21 May 2016 04:00:00 -0400</pubDate>
+        <link>https://guppster.github.io//talks/voce-precisa-da-comunidade/</link>
+        <guid isPermaLink="true">https://guppster.github.io//talks/voce-precisa-da-comunidade/</guid>
+        
+        <category>ativismo</category>
+        
+        <category>comunidade</category>
+        
+        <category>talks</category>
+        
+        
+        <category>talks</category>
+        
+      </item>
+    
+      <item>
+        <title>Documentário :: Revolution OS</title>
+        <description>&lt;p&gt;Bom, essa é uma obra famosíssima no meio da informática e você provavelmente já ouviu falar dela. É um documentário que conta a história do sistema &lt;a href=&quot;/category#linux&quot;&gt;GNU/Linux [0]&lt;/a&gt;, de como se iniciou, tornou-se grande e como é presença muito forte hoje. Digo hoje pois podemos pensar em seu avanço até os dias atuais, mesmo o documentário feito no ano de 2001. ;)&lt;/p&gt;
+
+&lt;p&gt;Há figuras ilustres presentes, participando de entrevistas e mostrando seu ponto de vista sobre assuntos importantes, respondendo desde aquelas perguntas de praxe “&lt;em&gt;o que é?&lt;/em&gt;”, “&lt;em&gt;como começou?&lt;/em&gt;” até algumas mais polêmias, principalmente quando se fala das licensas e do modelo Open Source, em contrapartida ao movimento pioneiro Free Software.&lt;/p&gt;
+
+&lt;p&gt;Olhando para esse lado da polêmica e das diferenças entre tais movimentos, podemos ver o que o autor de cada um acha da outra e também opiniões de importantes personagens no cenário, ainda atualmente. Stallman fala a respeito da ideia do &lt;a href=&quot;https://www.gnu.org/licenses/copyleft.pt-br.html&quot;&gt;&lt;strong&gt;copyleft&lt;/strong&gt; [1]&lt;/a&gt;, deixando melhor e mais claro seu entendimento.&lt;/p&gt;
+
+&lt;p&gt;Ainda é falado do tão famoso &lt;a href=&quot;https://www.gnu.org/software/hurd/&quot;&gt;GNU Hurd [2]&lt;/a&gt; e os motivos pelos quais até hoje ele não é tão utilizado e os porquês do avanço e adoção do Linux. Mas claro, não vou explicar aqui, pois se o fizesse você não ia precisar ver o documentário para entender haha. Mas veja, afinal, o link para assistir ele agora, online, com legendas em português, está aqui:&lt;/p&gt;
+
+&lt;iframe src=&quot;https://youtube.com/embed/plMxWpXhqig&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;De qualquer modo, ainda é bom ressaltar a música de fechamento do documentário, a &lt;a href=&quot;https://www.gnu.org/music/free-software-song.html&quot;&gt;“&lt;strong&gt;The Free Software Song&lt;/strong&gt;” [3]&lt;/a&gt;, que você pode ouvir o próprio Stallman cantando:&lt;/p&gt;
+
+&lt;center&gt;&lt;audio controls=&quot;&quot;&gt;&lt;source src=&quot;https://www.gnu.org/music/free-software-song.ogg&quot; type=&quot;audio/ogg&quot; /&gt;&lt;/audio&gt;&lt;/center&gt;
+
+&lt;p&gt;Ou ainda assistir a performance da banda GNU/Stallmans:&lt;/p&gt;
+
+&lt;iframe src=&quot;https://youtube.com/embed/z5eLn1QMJS0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;h1 id=&quot;links&quot;&gt;Links&lt;/h1&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[0]: /category#linux
+[1]: https://www.gnu.org/licenses/copyleft.pt-br.html
+[2]: https://www.gnu.org/software/hurd/
+[3]: https://www.gnu.org/music/free-software-song.html
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Thu, 12 May 2016 13:00:00 -0400</pubDate>
+        <link>https://guppster.github.io//movies/revolution-os/</link>
+        <guid isPermaLink="true">https://guppster.github.io//movies/revolution-os/</guid>
+        
+        <category>documentario</category>
+        
+        <category>linux</category>
+        
+        
+        <category>movies</category>
+        
+      </item>
+    
+      <item>
+        <title>e-Book Review :: Docker Para Desenvolvedores - Rafael Gomes &amp; Luis Armando Bianchin</title>
+        <description>&lt;div style=&quot;text-align: center;&quot;&gt;
+	&lt;img src=&quot;/images/posts/2016/20.png&quot; style=&quot;width:50%;&quot; /&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Fala, minha gente! Segundo e-book que vou fazer review aqui (você viu o primeiro? Se não, &lt;a href=&quot;/books/http-succinctly/&quot;&gt;clica aqui [0]&lt;/a&gt;). Ele foi feito pelo Gomex (olha o &lt;a href=&quot;http://techfree.com.br&quot;&gt;blog dele [1]&lt;/a&gt;) juntamente com o Luis. O material está em desenvolvimento, com cerca de 55% produzido (falando de hoje, &lt;strong&gt;10.05.2016&lt;/strong&gt;, claro), e mesmo assim já está magnífico!&lt;/p&gt;
+
+&lt;p&gt;O assunto é algo muito bacana: &lt;strong&gt;Docker&lt;/strong&gt;. Essa maravilha que, notoriamente, veio para ficar e ajudar o pessoal de infra e dev, não se limitando a eles (;]). Docker está ajudando e muito no desenvolvimento da &lt;a href=&quot;https://pt.wikipedia.org/wiki/DevOps&quot;&gt;cultura devops [2]&lt;/a&gt;. Utiliza a tecnologia Linux Container, algo antigo até, mas dando uma repaginada e fazendo seu uso ficar simples e gerar toda essa euforia sobre ele.&lt;/p&gt;
+
+&lt;p&gt;O que me deixou mais animado com o &lt;a href=&quot;/category#docker&quot;&gt;Docker [3]&lt;/a&gt; foi o fato de ser muito simples de usar e resolver rapidamente um problema &lt;del&gt;escroto&lt;/del&gt; chato com virtualização que insiste em permanecer. Mas chega de falar do programa em si e vamos falar do livro, né?!&lt;/p&gt;
+
+&lt;p&gt;Tem linguagem clara e simples. Bem direta, o que é bom. O foco do livro é justamente mostrar os benefícios e os passos simples da adoção do Docker para os desenvolvedores, não ingressar em uma parte mais hard da coisa. E ele atende muito bem ao seu propósito!&lt;/p&gt;
+
+&lt;p&gt;Com “apenas” 50% do material produzido até o momento ele já conta com diversos conteúdos importantes, como:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;O que é e por quê usar Docker?&lt;/li&gt;
+  &lt;li&gt;Processo de instalação&lt;/li&gt;
+  &lt;li&gt;Uso básico&lt;/li&gt;
+  &lt;li&gt;Criar sua própria imagem&lt;/li&gt;
+  &lt;li&gt;Boas práticas para criação de suas imagens&lt;/li&gt;
+  &lt;li&gt;Abordagem sobre conceito do armazenamento do Docker&lt;/li&gt;
+  &lt;li&gt;Abordagem sobre conceito da rede do Docker&lt;/li&gt;
+  &lt;li&gt;Gerenciar hosts Docker remotamente&lt;/li&gt;
+  &lt;li&gt;Docker para usuários não GNU/Linux&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Pois é, ainda fala sobre como quem não usa &lt;a href=&quot;/category#linux&quot;&gt;GNU/Linux [4]&lt;/a&gt; pode fazer proveito dessa maravilha de programa. Claro, não é algo 100%, afinal, LXC é coisa nativa do Linux, então, vem pro lado bom, cara!&lt;/p&gt;
+
+&lt;p&gt;A parte de “Gerenciar hosts Docker remotamente”, caso não tenha ficado claro, é falando sobre a forma de utilizar Docker em plataformas como Amazon AWS, Digital Ocean (se registre &lt;a href=&quot;https://m.do.co/c/cc1f5d13e2cd&quot;&gt;clicando aqui [5]&lt;/a&gt; e ganhe $10 na Digital Ocean) e outras formas, gerenciando tudo com o cliente via linha de comando. É ou não é uma maravilha?!&lt;/p&gt;
+
+&lt;p&gt;Para finalizar, você pode adquirir o e-book na &lt;a href=&quot;https://leanpub.com/dockerparadesenvolvedores&quot;&gt;LeanPub [6]&lt;/a&gt; de forma gratuita, ou doar alguns Obamas como agradecimento por esse material maravilhoso. Mais coisas sobre Docker você pode ver no &lt;a href=&quot;https://www.youtube.com/channel/UCPNrIITPNFFLmcU3VfoKuGQ&quot;&gt;canal no Youtube do Gomex [7]&lt;/a&gt; ou ainda no &lt;a href=&quot;http://techfree.com.br/category/docker/&quot;&gt;Blog do Gomex [8]&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Vlw, pessoal! Tudo indica que haverão mais conteúdo sobre &lt;a href=&quot;/category#docker&quot;&gt;Docker [3]&lt;/a&gt; aqui, então, fiquem atentos! :D&lt;/p&gt;
+
+&lt;h2 id=&quot;links&quot;&gt;Links&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[0]: /books/http-succinctly/
+[1]: http://techfree.com.br
+[2]: https://pt.wikipedia.org/wiki/DevOps
+[3]: /category#docker
+[4]: /category#linux
+[5]: https://m.do.co/c/cc1f5d13e2cd
+[6]: https://leanpub.com/dockerparadesenvolvedores
+[7]: https://www.youtube.com/channel/UCPNrIITPNFFLmcU3VfoKuGQ
+[8]: http://techfree.com.br/category/docker/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Tue, 10 May 2016 16:00:00 -0400</pubDate>
+        <link>https://guppster.github.io//books/docker-para-desenvolvedores/</link>
+        <guid isPermaLink="true">https://guppster.github.io//books/docker-para-desenvolvedores/</guid>
+        
+        <category>docker</category>
+        
+        <category>infra</category>
+        
+        <category>livros</category>
+        
+        
+        <category>books</category>
+        
+      </item>
+    
+      <item>
+        <title>Documentário :: Citizenfour</title>
+        <description>&lt;p&gt;A história do maior vazamento de dados já ocorrida até hoje é famosa demais. Depois de 2013, &lt;del&gt;todo mundo&lt;/del&gt; muita gente conhece o tal Edward Snowden e sua façanha, fazendo geral começar a se interessar mais por sua privacidade e desconfiar de toda bondade por detrás das ações de orgãos de inteligência. Esse documentário aborda justamente essa questão: de como ocorreu o vazamento desses dados. Vem cá, olha o trailer:&lt;/p&gt;
+
+&lt;iframe src=&quot;https://player.vimeo.com/video/108591141&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;É importante notar a consistência da produção. Esse documentário foi produzido por Laura Poitras, uma das jornalistas que estavam envolvidos em divulgar de forma segura toda essa bagunça. Esse projeto tem como base, também, o livro feito por Luke Harding, &lt;strong&gt;The Snowden Files&lt;/strong&gt;, que já fiz um &lt;a href=&quot;/books/the-snowden-files/&quot;&gt;post de review [0]&lt;/a&gt;. Com todo esse peso, não é a toa que foi o ganhador do Oscar de melhor documentário de 2015. ;)&lt;/p&gt;
+
+&lt;p&gt;Além de tudo isso, para compactuar ainda mais com toda a ideologia envolvida na coisa, a Laura disponibilizou para que você assista de grátis. Só vir &lt;a href=&quot;https://thoughtmaybe.com/citizenfour&quot;&gt;nesse link [1]&lt;/a&gt;. As legendas tu consegue &lt;a href=&quot;http://legendas.tv/busca/Citizenfour/36253&quot;&gt;por aqui [2]&lt;/a&gt;. Muito bom isso, né?!&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;OBS:&lt;/strong&gt; A legenda não está sincronizada muito bem (provavelmente feita para uma outra versão do vídeo), então, é bom regular um delay dessa legenda. Segue um comando:&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ mplayer -subdelay -13.5 -sub legenda.srt video.ogv
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Toda a obra, ou melhor, a essência, do documentário foi filmada nas reuniões que haviam entre o time para fazer todo o processo da melhor forma possível. Gostei demais disso, pois mostra ainda mais realidade, coisa importante para uma obra desse tipo. Se fosse algo simulado, talvez não fosse de muito agrado.&lt;/p&gt;
+
+&lt;p&gt;E claro, só gente de peso aparece no doc. Exemplo? Jacob Appelbaum e Julian Assange, por exemplo. Tem algumas falas dele, inclusive, uma parte de uma palestra do Jacob. Para ver esse trecho, só assistir ao documentário. Mas algo que não está lá (até porque saiu depois de produzido) foi essa palestra do Gleen, muito esclarecedora por sinal:&lt;/p&gt;
+
+&lt;iframe src=&quot;https://youtube.com/embed/pcSlowAhvUk&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Algo que acho importante mencionar é a postura de Edward frente a todas as coisas que já se imagina sofrer: perder contato com família, amigos, a própria namorada, emprego, contas e tudo mais. Em partes do documentário ele fala:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&quot;[...] sei o que vai acontecer comigo, e assumo o risco [...]&quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Essa postura dele é sim, honrosa. Algo que recomendo para complementar isso, e entender o porque de minha ênfase nessa questão, é o episódio do podcast Segurança Legal sobre &lt;a href=&quot;http://www.segurancalegal.com/2015/12/episodio-90-hacktivismo.html&quot;&gt;Hacktivismo [3]&lt;/a&gt;. Nele o Guilherme e o Vinícius falam muito bem dessa questão, do conceito por trás da palavra ativismo e tudo mais. Bom, vale a audição! (? rs)&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;OBS:&lt;/strong&gt; Note que a todo momento o Snowden se preocupa muito com privacidade e para isso, recorre à criptografia. Perceba também que em alguns momentos é feita referência ao uso do GPG. Não conhece ou não sabe usar GPG? Bom, olha &lt;a href=&quot;/blog/gnupg/&quot;&gt;esse guia aqui no blog sobre [4]&lt;/a&gt; (e também tem uma &lt;a href=&quot;https://lampiaosec.github.io/posts/gnupg/&quot;&gt;versão em inglês [5]&lt;/a&gt; dele lá no site do &lt;a href=&quot;https://lampiaosec.github.io&quot;&gt;LampiãoSec [6]&lt;/a&gt;!).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Bom, no mais, até a vista, pessoal! E lembrem-se: só privacidade salva :D&lt;/p&gt;
+
+&lt;h1 id=&quot;links&quot;&gt;Links&lt;/h1&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[0]: /books/the-snowden-files/
+[1]: https://thoughtmaybe.com/citizenfour
+[2]: http://legendas.tv/busca/Citizenfour/36253
+[3]: http://www.segurancalegal.com/2015/12/episodio-90-hacktivismo.html
+[4]: /blog/gnupg/
+[5]: https://lampiaosec.github.io/posts/gnupg/
+[6]: https://lampiaosec.github.io
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Fri, 06 May 2016 15:00:00 -0400</pubDate>
+        <link>https://guppster.github.io//movies/citizenfour/</link>
+        <guid isPermaLink="true">https://guppster.github.io//movies/citizenfour/</guid>
+        
+        <category>ativismo</category>
+        
+        <category>documentario</category>
+        
+        
+        <category>movies</category>
+        
+      </item>
+    
+      <item>
+        <title>e-Book Review :: HTTP Succinctly - Scott Allen</title>
+        <description>&lt;div style=&quot;text-align: center;&quot;&gt;
+	&lt;img src=&quot;/images/posts/2016/19.png&quot; style=&quot;width:50%;&quot; /&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Fala, pessoal! Tudo certo? Olha só, primeiro e-book que vou fazer review, vamos lá! :)&lt;/p&gt;
+
+&lt;p&gt;Bem, recentemente estive com a necessidade de estudar mais sobre o protocolo HTTP e então fui buscando materiais por ai. Esse foi um dos muitos e mais bacanas que encontrei. Se trata de um e-book (pode baixar por &lt;a href=&quot;http://www.syncfusion.com/resources/techportal/details/ebooks/http&quot;&gt;aqui [0]&lt;/a&gt;), pequeno (60 páginas), mas que trata bem algumas questões.&lt;/p&gt;
+
+&lt;p&gt;Claro, por ser compacto, não é muito detalhado. Ele faz um basicão sobre vários conceitos, como resources, cabeçalhos, códigos de resposta, cookies … Pois bem, não aconselho ele como única fonte, como um guia, para quem quer entender melhor os conceitos da web, mas o encorajo a ler como ponto de partida. Afinal, foi assim que fiz. Ele contém algumas indicações de onde encontrar mais detalhes, o que é importante vendo por esse lado.&lt;/p&gt;
+
+&lt;p&gt;Está disponível apenas no idioma inglês, mas é um conteúdo técnico, então é tranquilo para ler. Se precisar, tradutores online estão ai para isso. Só não pode é deixar de aprender.&lt;/p&gt;
+
+&lt;p&gt;Ele é bacana também, como é o objetivo, para desenvolvedores de web services, pois fala do básico do protocolo pensando justamente no que esse desenvolvedor vai precisar entender para fazer um bom produto. Ou seja, vai além do &lt;em&gt;“HTTP tem o GET e POST, em que o GET é pela URL e o post por um formulário”&lt;/em&gt; que se vê por ai. rs’&lt;/p&gt;
+
+&lt;p&gt;Pois bem, um ultimato? Use ele como ponto de partida para aprender mais sobre HTTP. Vlw, flw! :D&lt;/p&gt;
+
+&lt;h2 id=&quot;links&quot;&gt;Links&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[0]: http://www.syncfusion.com/resources/techportal/details/ebooks/http
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Tue, 03 May 2016 21:00:00 -0400</pubDate>
+        <link>https://guppster.github.io//books/http-succinctly/</link>
+        <guid isPermaLink="true">https://guppster.github.io//books/http-succinctly/</guid>
+        
+        <category>http</category>
+        
+        <category>livros</category>
+        
+        <category>protocolos</category>
+        
+        <category>redes</category>
+        
+        
+        <category>books</category>
+        
+      </item>
+    
+      <item>
+        <title>Documentário :: We steal secrets: The story of Wikileaks</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/images/posts/2016/18.png&quot; alt=&quot;You talk of times of peace for all, and them prepare for war.&quot; title=&quot;You talk of times of peace for all, and them prepare for war.&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;E é com essa imagem de uma famosa frase que começo o post do hoje! Veja só, recentemente postei sobre duas obras falando sobre o Wikileaks: o filme &lt;a href=&quot;/movies/the-fifth-estate/&quot;&gt;The Fifth Estate [0]&lt;/a&gt; e o documentário &lt;a href=&quot;/movies/mediastan/&quot;&gt;Mediastan [1]&lt;/a&gt;. Agora, vamos para mais uma! Olha o trailer dele documentário aqui:&lt;/p&gt;
+
+&lt;iframe src=&quot;https://youtube.com/embed/5P5H-XBLk9c&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;O documentário é bem produzido e conta vários fatos importantes! Fala de toda a história de um dos maiores vazamentos de dados sigilosos que já aconteceu, o famoso cablegate. Mostra a questão de como decorreu o vazamento e suas consequências, coisa importante de se ver.&lt;/p&gt;
+
+&lt;p&gt;Também fala do caso de Chelsea Manning, a informante do Wikileaks. Muitos a usam como exemplo, querendo dizer que o Wikileaks não é seguro para seus informantes, coisa que não passa de uma forma de querer amedrontar. No documentário deixa claro que o único motivo de Chelsea ter sido descoberta foi por ela conversar com outras pessoas sobre o caso, passar muitas informações a quem não era confiável. Também é citado o fato de ela querer fazer o mesmo com outros dois jornais de grande circulação.&lt;/p&gt;
+
+&lt;p&gt;Portanto, que sendo Manning a única informante do Wikileaks conhecida e que o motivo disso foi que ela falou com outras pessoas por meio inseguros, isso trás mais uma prova que o meio utilizado pelo Wikileaks, o Rubberhose (que falei um pouco sobre no post do &lt;a href=&quot;/movies/the-fifth-estate/&quot;&gt;The Fifth Estate [0]&lt;/a&gt;), é bem seguro até então.&lt;/p&gt;
+
+&lt;p&gt;Há também, no documentário, explicando melhor sobre o famoso caso da acusação de Julian Assange ter estuprado algumas mulheres. Bem, não vou contar como foi o caso para não perder a graça. Para isso, assite o documentário ai! É bem interessante. :)&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Ah, fato “bacana”: Falei sobre o filme The Fifth Estate, produzido com base no livro de Daniel Domsheit, ter sido muito criticado, certo? Pois bem, ele aparece nesse documentário e suas opiniões podem ser ouvidas. Note como não é algo unânime, como é retratado na obra dele. Eis a importância de verificar várias fontes! ;)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Todo o documentário é bem interessante e dá para entender bem toda a história. Agora, há uma parte da narrativa que não gostei. Ela fala algo assim:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&quot;Julian Assange é um cara obsecado por segredo, por manter os dele e revelar os de governos e corporações&quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Isso, para quem não conhece, trás a ideia de que? Que o Julian, e consequentemente Wikileaks, quer ver o mundo pegar fogo, desde que não estejam no incêndio, certo?&lt;/p&gt;
+
+&lt;p&gt;Pois, isso, na verdade, faz parte do princípio da turma &lt;a href=&quot;/category#cypherpunks&quot;&gt;Cypherpunk [2]&lt;/a&gt;, que seria “privacidade para os fracos, transparência para o fortes”. Portanto, acredito que essa parte no documentário poderia ser um pouco mais informativa. Mas nada que estrague por completo a boa obra.&lt;/p&gt;
+
+&lt;p&gt;Bem, por hoje, é isso, pessoal! Até mais!&lt;/p&gt;
+
+&lt;h1 id=&quot;links&quot;&gt;Links&lt;/h1&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[0]: /movies/the-fifth-estate/
+[1]: /movies/mediastan/
+[2]: /category#cypherpunks
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Fri, 29 Apr 2016 13:00:00 -0400</pubDate>
+        <link>https://guppster.github.io//movies/we-steal-secrets/</link>
+        <guid isPermaLink="true">https://guppster.github.io//movies/we-steal-secrets/</guid>
+        
+        <category>ativismo</category>
+        
+        <category>documentario</category>
+        
+        
+        <category>movies</category>
+        
+      </item>
+    
+      <item>
+        <title>Documentário :: Google and the world brain</title>
+        <description>&lt;p&gt;Fala, galera! Tudo certo? Bem, depois de uma sequência de filmes, vamos para alguns documentários, certo?&lt;/p&gt;
+
+&lt;p&gt;Esse de hoje é bem bacana. Recente, bem produzido … Mas a ideia dos reviews aqui, como já sabem, não é falar sobre esses detalhes, mas sim, falar a visão de alguém inserido no mundo da computação. Vamos nessa!&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Google and the world brain&lt;/em&gt; (Google e o cérebro do mundo) é um documentário feito pela BBC que conta os trames envolvidos na criação do Google Books.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Google Books seria um projeto para fazer uma biblioteca gigantesca, agregando todo o conhecimento da humanidade, disponível para todos.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Bem, o &lt;strong&gt;seria&lt;/strong&gt; ali é justamente para mostrar que tem algo de estranho nessa história. Mas antes, vamos devagar um pouco:&lt;/p&gt;
+
+&lt;p&gt;A busca pela coleção de todo conhecimento possível é algo notável do ser humano. Se não fosse verdade, casos como a famosa biblioteca de Alexandria não aconteceria. Ou ainda mais próximo de nós: bibliotecas de universidades, municipais, comunitárias … Nenhuma delas existiria. Quer que seja mais próximo de você? Então, para que baixar tanto material ou salvar tanto nos favoritos com a ideia de “depois eu olho”? Pois é, é justamente essa ideia de querer ter todo o conhecimento nas palmas das mãos.&lt;/p&gt;
+
+&lt;p&gt;A questão é que agora, com todo o conhecimento tecnológico que se tem, pode muito bem ser possível conseguir isso. E é o que o Google está tentando fazer, em tese.&lt;/p&gt;
+
+&lt;p&gt;Mas a ideia do Google é muito embargada por algumas incompatibilidades. A primeira que podemos falar é a questão de direitos autorais.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;P.S.:&lt;/strong&gt; Não estou aqui, nesse momento, para comentar se os direitos autorais são justos/úteis ou não, ok? Ok. Prossigamos.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;O Google começou sua labuta de digitalizar vários livros, e com isso, obras com direitos autorais entraram no bolo. Quem acompanha o blog, já viu em outros documentários, que a indústria dos direitos autorais é forte e além de latir, sabe morder muito bem. Pois, foram logo para cima da empresa com todos seus processos e argumentos e, até então, a digitalização de obras com copyright está proibida e o Google pagou multa pelas que já foram.&lt;/p&gt;
+
+&lt;p&gt;Uma questão que podemos falar aqui é como esse processo todo de julgamento é feito por debaixo dos panos. Tudo na espreita. Ninguém sabe nem viu nada. Afinal, muitos acordos de confidencialidade são assinados. Briga de cachorro grande.&lt;/p&gt;
+
+&lt;p&gt;Agora um dos maiores impasses que tem nessa questão é o lado ético da coisa. Muita gente afirma que o Google não está fazendo algo legal para os usuários. Não está sendo bonzinho, só fazendo o papel de lobo na pele de cordeiro. Muita gente alega que se trata da criação de um monopólio do conhecimento, em que a empresa será a única capaz de comercializar, por exemplo, obras esgotadas, existente apenas para consultas em bibliotecas. Empresas como Amazon e Microsoft, de certa forma, aparentam querer entrar no jogo, mas grandes bibliotecas já tem seus acordos - por debaixo dos panos, claro - com a Google.&lt;/p&gt;
+
+&lt;p&gt;E ainda mais, há quem afirme (e convenhamos, há razão nisso) que não se trata de o Google criar uma biblioteca enorme. Eles estão criando a maior livraria já existente. Afinal, os livros estão lá para serem comprados. E além de lucrar dessa forma, com a venda dos PDFs e outros formatos, vão lucrar com seu principal produto: os usuários. Afinal de contas, em nenhum momento Google afirma que essa “biblioteca” está apenas para ser lida e não ler o comportamento do usuário.&lt;/p&gt;
+
+&lt;p&gt;Pois bem, durma com essa! Forte abraço e até mais ver.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 20 Apr 2016 13:00:00 -0400</pubDate>
+        <link>https://guppster.github.io//movies/google-and-the-world-brain/</link>
+        <guid isPermaLink="true">https://guppster.github.io//movies/google-and-the-world-brain/</guid>
+        
+        <category>direitos autorais</category>
+        
+        <category>documentario</category>
+        
+        <category>privacidade</category>
+        
+        
+        <category>movies</category>
+        
+      </item>
+    
+      <item>
+        <title>Documentário :: Mediastan</title>
+        <description>&lt;p&gt;Lembra do filme &lt;a href=&quot;/movies/the-fifth-estate/&quot;&gt;“O Quinto Poder (The Fifth Estate)” [0]&lt;/a&gt; que postei aqui semana passada? Pois bem, esse documentário foi produzido pelo próprio Wikileaks, com um dedo do Julian Assange na produção, e que mostra a real história da corporação sobre o vazamento de documentos diplomáticos do EUA. Veja o trailer aqui:&lt;/p&gt;
+
+&lt;iframe src=&quot;https://www.youtube.com/embed/vAXK6DxNvrA&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Inclusive, sobre essa disputa entre os dois, pode ficar interessante ver a página no IMDB do &lt;a href=&quot;http://www.imdb.com/title/tt3169780/&quot;&gt;documentário [1]&lt;/a&gt; e do &lt;a href=&quot;http://www.imdb.com/title/tt1837703/&quot;&gt;filme [2]&lt;/a&gt;. Ah, veja a página no Wikileaks que fala sobre esse documentário &lt;a href=&quot;https://wikileaks.org/Watch-MEDIASTAN.html&quot;&gt;clicando aqui [3]&lt;/a&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;De antemão, fica o aviso de que é um documentário, então pode ser tido entediante, se comparado ao filme. Portanto, você só vai conseguir assistir se realmente estiver afim de conhecer a história.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;É importante assistir esse documentário principalmente pelo fato de poder ver o caso de vários ângulos distintos. Esse documentário é feito passando por vários locais onde estavam o exército americano e entrevistando pessoas dessas determinadas áreas. É interessante o ponto de vista e surpresa de cada um.&lt;/p&gt;
+
+&lt;p&gt;Olha que imagem interessante:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/2016/17.png&quot; alt=&quot;&amp;quot;The more I read the cables, the more I came to the conclusion that this was the type of information that should become public.&amp;quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Bem, esse documentário fala do famoso caso “cablegate”, que houve o envolvimento da Chelsea Manning. É importante falar que essa foi a única delatora do Wikileaks que foi descoberta e condenada. Mas isso, como mostra no documentário, aconteceu apenas porque ela tentou, sem sucesso, fazer o vazamento com dois grandes jornais e por ai que foi descoberta.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Agora segredo: O documentário é cobrado menos de 10 reais para ser visto, mas tem alguns lugares que disponibilizam ele, &lt;a href=&quot;http://download.cabledrum.net/mediastan/&quot;&gt;como aqui [4]&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Até mais ver!!&lt;/p&gt;
+
+&lt;h2 id=&quot;links&quot;&gt;Links&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[0]: /movies/the-fifth-estate/
+[1]: http://www.imdb.com/title/tt3169780/
+[2]: http://www.imdb.com/title/tt1837703/
+[3]: https://wikileaks.org/Watch-MEDIASTAN.html
+[4]: http://download.cabledrum.net/mediastan/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Wed, 13 Apr 2016 11:00:00 -0400</pubDate>
+        <link>https://guppster.github.io//movies/mediastan/</link>
+        <guid isPermaLink="true">https://guppster.github.io//movies/mediastan/</guid>
+        
+        <category>filme</category>
+        
+        <category>ativismo</category>
+        
+        
+        <category>movies</category>
+        
+      </item>
+    
+      <item>
+        <title>Filme :: The Fifth Estate</title>
+        <description>&lt;p&gt;Olá, pessoal!&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Esse, diferente de todos os outros, já veio de uma edição do &lt;a href=&quot;https://lampiaosec.github.io/virada-hacker/&quot;&gt;#ViradaHacker [0]&lt;/a&gt;, em que aconteceu o &lt;a href=&quot;http://lampiaosec.github.io/virada-hacker/2016/04/02/diario-de-bordo/#cine-hacker&quot;&gt;Cine Hacker [1]&lt;/a&gt; e o vídeo passado foi justamente esse.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;The Fifth Estate&lt;/strong&gt;, ou &lt;strong&gt;O quinto poder&lt;/strong&gt;, é um filme que fala sobre o &lt;a href=&quot;https://wikileaks.org/&quot;&gt;Wikileaks [2]&lt;/a&gt;, ou como muitos preferem dizer, é um filme anti-wikileaks. O motivo disso? Nesse filme é mostrado o Wikileaks como sendo algo sem compaixão humana, algo dessa forma. Ele foi feito baseado em um livro do rapaz que é deixado como mocinho na obra. Portanto, é um pouco suspeito, certo?&lt;/p&gt;
+
+&lt;p&gt;Mas bem, por enquanto, de qualquer forma, segue o trailer:&lt;/p&gt;
+
+&lt;iframe src=&quot;https://www.youtube.com/embed/JV7S888zYm0&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;O filme, em relação a conteúdo técnico, segue o comum. O máximo que é falado é sobre o Rubberhose, que é uma tecnologia de criptografia, feita por Julian Assange, para o Wikileaks, que permite nem mesmo o portal de vazamentos saber quem são suas fontes. Ou seja, isso garante anonimato ao máximo! O que é algo muitíssimo importante, principalmente em um tipo de projeto como esse.&lt;/p&gt;
+
+&lt;p&gt;Mas o holofote principal do filme é acabar por mostrar a Wikileaks e Assange de formas nada amigáveis. Não precisa ser nenhum puro conhecedor dos trabalhos do Wikileaks para saber do que se trata. Por exemplo, lendo o livro &lt;a href=&quot;/books/cypherpunks/&quot;&gt;Cypherpunks [3]&lt;/a&gt; você já terá uma boa base para isso.&lt;/p&gt;
+
+&lt;p&gt;A trama se passa desde a entrada do Daniel Domscheit-Berg até sua saída, que acontece durante o caso cablegate, que foi aquele em que o Wikileaks ganhou muita fama pelo vazamento de vários documentos militares e governamentais, como alguns telegramas e vídeos como provas de crimes de guerra.&lt;/p&gt;
+
+&lt;p&gt;O Wikileaks mesmo não gostou nada do roteiro do filme. Tanto que chegou até a produzir um documentário, Mediastan (que possivelmente, logo logo estará por aqui) para mostrar o lado verdadeiro da organização. E a luta foi/é grande, afinal, a aceitação, mesmo com esse difícil trabalho, ainda é grande e a ajuda, pouca.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;No fim das contas esse não deixa de ser um filme indicado para quem se interessa no assunto de privacidade, criptografia e coisas correlatadas. Mas vejam bem, sempre é vital analisar os dois lados da moeda.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;E como esse é mais uma dessas obras carente de conteúdos técnicos, não há motivo para alonga aqui, então, fecho assim mesmo.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Até mais ver!!&lt;/p&gt;
+
+&lt;h2 id=&quot;links&quot;&gt;Links&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[0]: https://lampiaosec.github.io/virada-hacker/
+[1]: http://lampiaosec.github.io/virada-hacker/2016/04/02/diario-de-bordo/#cine-hacker
+[2]: https://wikileaks.org/
+[3]: /books/cypherpunks/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Thu, 07 Apr 2016 11:00:00 -0400</pubDate>
+        <link>https://guppster.github.io//movies/the-fifth-estate/</link>
+        <guid isPermaLink="true">https://guppster.github.io//movies/the-fifth-estate/</guid>
+        
+        <category>filme</category>
+        
+        <category>ativismo</category>
+        
+        
+        <category>movies</category>
+        
+      </item>
+    
+  </channel>
+</rss>

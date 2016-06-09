@@ -1,0 +1,136 @@
+<p>O título desse post já é bem descritivo, mas para ser mais claro, vou deixar algumas coisas clara antes de mais nada:</p>
+
+<h3 id="o-que--esse-artigo">O que é esse artigo</h3>
+
+<p>Aqui eu irei comentar sobre os benefícios de contribuir para projetos abertos e utilizando o Git, formas de fazer isso e como fazer. Para nosso estudo de caso utilizarei o Github como servidor (por conta da quantidade de projetos que por lá estão e tudo mais).</p>
+
+<h3 id="o-que-no--esse-artigo">O que não é esse artigo</h3>
+
+<p><strong>Não é um tutorial sobre Git!</strong></p>
+
+<p>Para isso, leia a documentação no <a href="https://git-scm.com/doc">site do projeto</a> ou simplesmente, <em>Google is your friend</em>! :)</p>
+
+<!--more-->
+
+<h2 id="benefcios">Benefícios</h2>
+
+<p>Agora, podemos começar o artigo em si… Quero falar logo sobre os benefícios de você ajudar em projetos alheios.</p>
+
+<p>Veja bem, todo o projeto GNU/Linux é o que é hoje em dia graças à colaboração que muitas pessoas fizeram para que ele ficasse dessa forma. Então, pense no benefício que não é para a comunidade se você a ajuda a crescer mais e mais!!</p>
+
+<p>Além do benefício comunitário envolvido, tem mais. Principalmente o autodesenvolvimento! Você vai praticar o uso das tecnologias que tem interesse, vai aprender a atuar melhor em equipe e também utilizar o Git - que é o software mais utilizado hoje em seu ramo. Fora que se/quando chegar o momento de uma entrevista de emprego (já tem muitos casos assim) você pode mostrar sua experiência para a empresa apenas linkando seu perfil para eles.</p>
+
+<p>Convenci que é uma boa ajudar? Se sim, segue, se não, lê novamente haha.</p>
+
+<h2 id="maneiras-de-contribuir">Maneiras de contribuir</h2>
+
+<p>Para ajudar em um projeto você não precisa ser fera em um assunto! Afinal, muitas das vezes, é ajudando que você vai aprendendo mais e mais. Portanto, o único pré-requisito para ajudar é a vontade!!!</p>
+
+<p>Tem várias opções de formas de ajudar, vejamos:</p>
+
+<h4 id="programao">Programação</h4>
+
+<p>Se você entende da linguagem que o projeto é feito você pode meter a mão no código e corrigir bugs que tenha, inserir novas funcionalidades e resolver <em>issues</em> que sejam listadas.</p>
+
+<p>Novamente lembrando, não é necessário que você seja um expert na tecnologia! Sempre que você manda alterações, elas serão analisadas. Portanto, se forem boas, serão aceitas, se não, o autor pode (e provavelmente vai) te dar dicas de onde melhorar.</p>
+
+<h4 id="criando-issues">Criando issues</h4>
+
+<p>Você pode pensar em algo interessante que o projeto poderia ter ou encontrou algum bug (mínimo que seja) no programa. Bacana! Fale sobre isso na parte direcionada à issues do projeto. Nessa parte, tente ser o mais claro possível e com bastante informações.</p>
+
+<blockquote>
+  <p>O Github - e vários de outros servidores - aceita a sintaxe de escrita em <em>markdown</em>, portanto, pode usar dela para escrever o conteúdo mais organizado e arrumado de forma mais fácil.</p>
+</blockquote>
+
+<h4 id="traduo">Tradução</h4>
+
+<p>O projeto é somente em inglês e acha que poderia ser legal tê-lo em português (ou o contrário)? Traduz ele! Simples assim… E não estou falando apenas do software em si, mas pode pensar em traduzir a documentação, FAQ e outros materiais que seja útil para ele.</p>
+
+<h4 id="documentao">Documentação</h4>
+
+<p>Muitas vezes quando se é feito um projeto, o autor cria a documentação com muito cuidado e deixa-a disponível. Mas conforme o programa vai crescendo, ou ele abandona e deixa de fazer a documentação ou apenas esquece disso. Portanto, fique a vontade para atualizar.</p>
+
+<p>Ou então, testar todos os exemplos se realmente funcionam e adicionar como resolver caso não. Inserir procedimentos para, por exemplo, instalação em uma gama maior de sistemas operacionais… E por ai vai!</p>
+
+<h2 id="mo-na-massa">Mão na Massa</h2>
+
+<p>Achou sua forma de contribuir? Ótimo! Vejamos como fazer isso…</p>
+
+<blockquote>
+  <p><strong>P.S.:</strong> Para exemplos, pegarei o programa <a href="https://github.com/lampiaosec/virgulino">Virgulino</a>, projeto feito pelo grupo de pesquisa em segurança <a href="https://lampiaosec.github.io">LampiãoSec</a>, que é um experimento para estudos relacionados à esteganografia.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>P.S.S.:</strong> Vou assumir que já tenha conta no Github (caso não tenha, faça) e que tem o Git instalado em sua máquina com o mínimo já configurado (bem, há vários posts ensinando como fazer isso, caso precise).</p>
+</blockquote>
+
+<h4 id="fork">Fork</h4>
+
+<p>O primeiro passo é encontrar o projeto com que contribuir. Como disse, pegarei como exemplo o <a href="https://github.com/lampiaosec/virgulino">Virgulino</a>, link do repositório: https://github.com/lampiaosec/virgulino.</p>
+
+<p>Depois de escolhido, como, provavelmente, você não terá acesso à edição direta no projeto, você deverá fazer um <code class="highlighter-rouge">fork</code> que consiste basicamente em criar uma cópia do mesmo. Para isso, na página do projeto, clique no botão com esse nome.</p>
+
+<p>Agora que já tem o projeto copiado em sua conta, acesse o repositório em seu nome. Basta alterar a url com seu nome de usuário no lugar de <code class="highlighter-rouge">lampiaosec</code>, ficando algo como <a href="#">https://github.com/seu_usuario/virgulino</a>.</p>
+
+<h4 id="clone">Clone</h4>
+
+<p>Feito isso, agora precisamos de ter o código em nossa máquina para edição, certo? Basta clonar o repositório:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ git clone https://github.com/seu_usuario/virgulino
+</code></pre>
+</div>
+
+<p>Entre no diretório do repositório e já pode começar a editar.</p>
+
+<blockquote>
+  <p>Nota: Já disse que aqui não é um tutorial sobre Git, logo, não vou mostrar como adicionar arquivos ao stagement, como fazer <code class="highlighter-rouge">commit</code>, <code class="highlighter-rouge">push</code> e etc.</p>
+</blockquote>
+
+<h4 id="pull-request">Pull Request</h4>
+
+<p>Depois de você ter alterado tudo que queria, fazendo os passos de adicionar as mudanças e subido para seu fork, você pode submeter essas suas alterações para que fique no projeto original. Para isso, vamos fazer um <em>Pull Request</em>!</p>
+
+<blockquote>
+  <p>Outra nota: O Github chama isso de <em>Pull Request</em>, mas em outros servidores você pode encontrar como <em>Merge Request</em> ou variantes.</p>
+</blockquote>
+
+<p>Estando logado e acessando ou o seu repositório ou o oficial do projeto, verá um botão na cor verde. Ele representa esse <em>Pull Request</em>. Clique nele e irá aparecer um formulário para você… Nesse formulário, você deve descrever as alterações que fez, facilitando um pouco a vida de quem vai analisar a requisição. Opcionalmente, se foi o caso, você pode “linkar” com as issues que tenha relação, apenas colocando o número a que ela se refere.</p>
+
+<h4 id="atualizando-o-fork">Atualizando o fork</h4>
+
+<p>Normalmente, quando você começa ajudar um projeto, você faz isso diversas vezes. Logo, pode dar uma ajuda hoje, uma amanhã e até no mês que vem. Isso não indica que o projeto será sempre o mesmo, sem mudanças além das suas. Ou seja, você precisa atualizar o que tem em sua máquina.</p>
+
+<p>Para fazer isso, temos a opção simples e a opção certa. Vamos ver:</p>
+
+<h6 id="simples">Simples</h6>
+
+<ol>
+  <li>Remova o diretório do projeto</li>
+  <li>Clone o projeto novamente</li>
+</ol>
+
+<p>Nada bonito isso, né?!</p>
+
+<h6 id="certo">Certo</h6>
+
+<p>Primeiro, adicione o link do repositório oficial ao seu repositório local:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ git remote add upstream https://github.com/lampiaosec/virgulino
+</code></pre>
+</div>
+
+<blockquote>
+  <p><strong>Mais uma nota:</strong> O nome <em>upstream</em> é apenas uma convenção que se foi criada. Ou seja, boas práticas… Mas isso não te impede de inserir um nome diferente, como <em>link_dos_cara</em>.</p>
+</blockquote>
+
+<p>Agora, basta atualizar usando o comando <code class="highlighter-rouge">git pull</code> e seja feliz.</p>
+
+<p>Ah!! Lembre-se de fazer essa atualização antes de começar a mexer no projeto! Sério, isso te livra de dores de cabeça kkkk.</p>
+
+<h2 id="finalizao">Finalização</h2>
+
+<p>Bom, é isso! Talvez, posteriormente eu faça posts mostrando funcionalidades e como utilizar o Git (para não passar batido em alguns pontos), mas por enquanto, pronto! Não tem desculpas para usar dizendo que não sabe ajudar nesses projetos.</p>
+
+<p>Espero que vire um contribuinte assíduo!</p>
+
+<p>Até mais ver! :D</p>

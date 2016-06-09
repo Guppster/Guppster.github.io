@@ -1,0 +1,105 @@
+<p>Olá, galera, tudo tranquilo?</p>
+
+<p>Estava conversando com um amigo que está estudando python e tudo mais, e então ele veio com a seguinte dúvida:</p>
+
+<blockquote>
+  <p>Qual a diferença entre == e is no python?</p>
+</blockquote>
+
+<blockquote>
+  <p>OBS: Recomendo para quem começar a ler esse post que vá até o final. Há coisas que só terão correto sentido quando complementadas. Recomendo fortemente também que leia os comentários! Há uma boa discussão a respeito disso por lá! Thanks!</p>
+</blockquote>
+
+<p>Para quem não sabe, no python tem o operador <em>is</em> que “tem a mesma função” do <em>==</em>. Veja:</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span>
+<span class="bp">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="ow">is</span> <span class="n">y</span>
+<span class="bp">True</span>
+</code></pre>
+</div>
+
+<p>Mas…</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span>
+<span class="bp">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="ow">is</span> <span class="n">y</span>
+<span class="bp">False</span>
+</code></pre>
+</div>
+
+<p>Viu só? Pois bem, o que que acontece então??</p>
+
+<p>O python tem um mecanismo interessante nesse ponto… Quando se tratam de <em>coisas pequenas</em> ele utiliza de ponteiros para apontar outros rótulos para um mesmo endereço de memória. Quando o que é armazenado na variável já começa a crescer, fica maior e tal, ele já não usa disso, para não pesar, mas sim de outro endereço.</p>
+
+<p>Seria um cache que ele faz de alguns tipos de objetos, entre eles estão int e string, por exemplo. Float e dicionário já não são assim.</p>
+
+<p>Para ter uma ideia melhor disso, vamos ver os endereços que as variáveis ocupam e o resultado da comparação:</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">hex</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="s">'0x98a1844'</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">hex</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+<span class="s">'0x98a1844'</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span>
+<span class="bp">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="ow">is</span> <span class="n">y</span>
+<span class="bp">True</span>
+</code></pre>
+</div>
+
+<p>Perceba que ele pega o mesmo endereço … Agora, se colocarmos valores maiores:</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">hex</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="s">'0x98e5520'</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">hex</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+<span class="s">'0x98e5508'</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span>
+<span class="bp">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="ow">is</span> <span class="n">y</span>
+<span class="bp">False</span>
+</code></pre>
+</div>
+
+<p>Ou seja, o <em>is</em> (como a tradução mostra) vai verificar se algo é aquilo a que a comparação está se referindo, ou seja, se são a mesma coisa. Já o <em>==</em> vai analisar se são iguais, assim como o esperado.</p>
+
+<p>Mais algumas demonstrações:</p>
+
+<ul>
+  <li>Float:</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span>
+<span class="bp">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="ow">is</span> <span class="n">y</span>
+<span class="bp">False</span>
+</code></pre>
+</div>
+
+<ul>
+  <li>Dict:</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span>
+<span class="bp">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="ow">is</span> <span class="n">y</span>
+<span class="bp">False</span>
+</code></pre>
+</div>
+
+<blockquote>
+  <p>Não há motivo para me aprofundar tanto aqui, é apenas uma dica rápida. Espero que resolva os problemas de dúvidas de quem necessitar … Tem mais algum caso como esse? Quer tirar alguma dúvida do tipo? Comenta ai ou entra em contato (olha no topo da página).</p>
+</blockquote>
+
+<p>Vlw pessoal, até mais ver!!</p>

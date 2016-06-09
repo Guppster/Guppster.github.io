@@ -1,0 +1,137 @@
+<p>Arch Linux não é essa distribuição que é só chegar, rodar um comando e pronto… Pois bem, para aqueles que gostam de fazer seus testes, é interessante ter um ambiente de virtualização disponível. E uma ótima solução para isso é o VirtualBox.</p>
+
+<p>Nesse artigo vou abordar os seguintes tópicos:
+- Instalação
+- Habilitando os módulos e rodando no boot
+- Habilitando modos de rede Host Only e Bridged
+- Adicionais para convidado
+- Extension Pack
+<!--more-->
+## Instalação</p>
+
+<p>A instalação é, de certa forma, simples. Primeiramente, terá de instalar o pacote VirtualBox:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># pacman -S virtualbox
+</code></pre>
+</div>
+
+<p>Depois você precisará instalar os módulos. Mas antes, tem de saber qual o seu <em>kernel</em> e escolher o módulo relacionado à ele. Para saber a versão do <em>kernel</em> que você usa:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ uname -r
+</code></pre>
+</div>
+
+<p>Após rodar o comando acima, verifique qual é o <em>kernel</em> instalado por aí. Se for o ARCH:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># pacman -S virtualbox-host-modules
+</code></pre>
+</div>
+
+<p>Caso seja o <em>kernel</em> LTS:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># pacman -S virtualbox-host-modules-lts
+</code></pre>
+</div>
+
+<p>E, por fim, para poder usar a interface gráfica mais comum, que é baseada no Qt, precisa instalá-lo:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># pacman -S qt
+</code></pre>
+</div>
+
+<p><em>P.S.</em>: eu não precisei, mas para evitar que aconteça algum problema contigo, melhor adicionar logo seu usuário ao grupo do VirtualBox (<strong>Ah! Não preciso avisar para substituir “gjuniioor” pelo seu usuário, né?!</strong>):</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># gpasswd -a gjuniioor vboxusers
+</code></pre>
+</div>
+
+<p>Com isso que fizemos até agora, já temos o essencial (referente à programas) para rodar o VirtualBox, mas ainda precisamos de uma coisinha… Siga.</p>
+
+<h2 id="habilitando-mdulo">Habilitando Módulo</h2>
+
+<p>Isso mesmo! Para rodar o VirtualBox precisa-se rodar um módulo em específico, que é o “vboxdrv”:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># modprobe vboxdrv
+</code></pre>
+</div>
+
+<p>Possa ser que após fazer isso, a modificação não surta efeito. Então, você roda esse comando e certamente vai resolver:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># depmod -a
+</code></pre>
+</div>
+
+<h2 id="habilitando-mdulos-para-rodar-no-boot">Habilitando Módulos para rodar no Boot</h2>
+
+<p>Sempre que você iniciar seu computador, vai precisar rodar o módulo para poder usar o VirtualBox. Seria bom demais se tivesse como habilitar o módulo já no boot da máquina, né?! Pois bem! É possível! Veja…</p>
+
+<p>Basta criar um arquivo em <em>/etc/modules-load.d/</em>, pode ser com o nome “<em>virtualbox.conf</em>” mesmo:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># echo vboxdrv &gt;&gt; /etc/modules-load.d/virtualbox.conf
+</code></pre>
+</div>
+
+<p>E pronto! Agora, sempre que iniciar a máquina, já terá o módulo rodando e com isso o VirtualBox vai rodar de boas.</p>
+
+<h2 id="habilitando-modos-de-rede-host-only-e-bridged">Habilitando Modos de Rede Host Only e Bridged</h2>
+
+<p>Até aqui, o que temos já pode rodar as máquias no modo de rede NAT e rede interna, mas pode ser que você precise rodar em Host Only ou Bridged e, para isso, precisamos fazer uns procedimentos a mais. Siga…</p>
+
+<p>O Arch Linux não vem com o programa “<em>ifconfig</em>”, mas sim com o “<em>ip</em>” (que é uma atualização). A questão é que o VirtualBox precisa dele para esses modos. O pacote que tem esse programa é o “<em>net-tools</em>”. Então, só instalar, né?! Quase isso…</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># pacman -S net-tools
+</code></pre>
+</div>
+
+<p>Depois disso, vamos precisar rodar dois módulos:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># modprobe vboxnetadp
+# modprobe vboxnetflt
+</code></pre>
+</div>
+
+<p><em>P.S.</em>: vamos ver se está lendo só por ler ou querendo aprender… Faça os passos já ditos anteriormente, para caso o carregamento do módulo não tenha surtido efeito e também habilite para rodar já no boot.</p>
+
+<p>Depois disso, já é possível usar modo Bridged ou Host Only em nossas máquinas. Show!</p>
+
+<h2 id="adicionais-para-convidados">Adicionais para Convidados</h2>
+
+<p>Os adicionais para convidados permitem que o VirtualBox faça, por exemplo, compartilhamento de diretórios entre o Host e a VM, dentre outras coisas.</p>
+
+<p>Para conseguir isso, precisamos instalar um complemento do VirtualBox:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># pacman -S virtualbox-guest-iso
+</code></pre>
+</div>
+
+<h2 id="extension-pack">Extension Pack</h2>
+
+<p>O Extension Pack é um pacote de extensões que permite que o VirtualBox faça boot por placas Intel, ou ainda tenha acesso ao USB, por exemplo.</p>
+
+<p>Para instalar, temos duas possibilidades. Vejamos.</p>
+
+<h4 id="com-aur">Com AUR:</h4>
+
+<p>Basta executar o comando abaixo:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ yaourt -S virtualbox-ext-oracle
+</code></pre>
+</div>
+
+<h4 id="pelo-virtualbox">Pelo VirtualBox:</h4>
+
+<p>Você precisará entrar nesse <a href="https://www.virtualbox.org/wiki/Downloads">link</a> e importar o arquivo pelo menu: <em>Arquivo → Preferências → Extensões</em>.</p>
+
+<h3 id="observaes">Observações</h3>
+
+<p>Esse artigo foi feito e testado no Arch Linux x86_64 com kernel 4.0.1-1-ARCH.</p>
+
+<p>Foram testados os seguintes modos de rede: Bridged, Rede Interna e NAT.</p>
+
+<p>Não cheguei a testar as opções de <em>Adicionais para Convidado</em> nem o <em>Extension Pack</em>, mas pela leitura de alguns manuais e Wikis, vi que seria dessa forma.</p>
+
+<p>Todos os demais comandos foram testados.</p>
+
+<p>Artigo originalmente postado no <a href="http://www.vivaolinux.com.br/artigo/VirtualBox-no-Arch-Linux/" title="Artigo no Viva o Linux">Viva o Linux</a>.</p>
+
+<p>Boa sorte e até mais ver! :D</p>

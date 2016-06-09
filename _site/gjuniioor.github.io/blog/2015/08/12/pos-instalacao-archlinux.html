@@ -1,0 +1,241 @@
+<p>Olá pessoALL!! Nesse artigo vou mostrar como é o processo de pós instalação do <strong>Arch Linux</strong>. Ao menos, da forma que eu uso… Alguns pode se perguntar o motivo de eu não tratar a instalação em si. Simples, já tem bastante coisa sobre isso. Se quiser, basta seguir um punhado de comandos que podem ser encontrados por toda a internet e pronto. Uma pós instalação é algo pessoal, que varia a depender do gosto das pessoas, então, esse meu post pode até servir para automatizar caso eu precise fazer novamente esse procedimento. :)</p>
+
+<h2 id="a-distribuio">A distribuição</h2>
+
+<p>Arch é uma das grandes distribuições GNU/Linux que existem. Numa primeira visão, é tida como uma distribuição complicada de se usar, mas nada que alguns instantes de leitura, quando se pega um problema, não resolva. Essa distro é focada em ser minimalista, elegante e, claro, muito <strong>KISS</strong>! Assim como o grandíssimo Slackware (Amém!).</p>
+
+<!--more-->
+
+<p>Ela tem seu próprio <em>package manager</em>, o <strong>Pacman</strong>, que particularmente, é o melhor que já utilizei. Fora os repositórios oficiais e do Pacman, tem o <strong>AUR</strong> (Arch Linux User Repository) que contém alguns scripts que automatizam a instalação de bastante coisa. Pode ser pensado como um SlackBuilds, para quem conhece.</p>
+
+<p>Chega de enrolação, e vamos seguir…</p>
+
+<h2 id="pr-requisitos">Pré-Requisitos</h2>
+
+<p>Como já deve ter percebido, esse é um post sobre Pós instalação, o que quer dizer que apenas o que precisa é do Arch instalado. Conexão com a internet já está incluso, para o caso das instalações…</p>
+
+<h2 id="leringou">Leringou?!</h2>
+
+<p>Antes de mais nada, gostaria de salientar que todos esses comandos aqui mostrados foram testados em meu processo de pós instalação, mas se no caso de algum de vocês tiver algum erro, basta comentar e unimos forças para resolver.</p>
+
+<h4 id="teclado">Teclado</h4>
+
+<p>A primeira parte da configuração é deixar o teclado em ABNT2 permanentemente. Para isso, basta editar um arquivo inserindo um parâmetro… Simplesmente rode o comando:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># echo "KEYMAP=br-abnt2" &gt;&gt; /etc/vconsole.conf
+</code></pre>
+</div>
+
+<p>Já vai estar lindamente configurado. Ou ao menos deveria… Vale lembrar que essa configuração de teclado é válida para o console. Caso rode um ambiente gráfico deverá fazer mais um procedimento (mas eu mostrarei quando chegar a hora).</p>
+
+<h4 id="usurio">Usuário</h4>
+
+<p>Se você usa GNU/Linux deve saber o motivo dele ser tão seguro. Mas se não sabe, vem com o tio… Se dá principalmente pelo “isolamento” de permissões que o usuário normal e o root tem. Então, precisamos criar nosso usuário… Veja o comando:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># useradd -m gjuniioor
+</code></pre>
+</div>
+
+<p>Basta criar a conta, criando juntamente a pasta para esse usuário (isso se faz com o parâmetro <code class="highlighter-rouge">-m</code> ali mostrado). Depois, vamos nos atentar para com a senha. Mude-a:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># passwd gjuniioor
+</code></pre>
+</div>
+
+<h4 id="sudo">Sudo</h4>
+
+<p>Pronto, agora isolamos o root na dele para não ser muito usado (essa é uma ótima prática). Mas precisamos ter privilégio com o nosso usuário para que ele possa instalar programas, configurar certas coisas e demais. O <code class="highlighter-rouge">sudo</code> faz isso para você… Ele consegue fazer com que usuários que tenham permissão se torne o todo poderoso por um instante. Vamos instalar:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># pacman -S sudo
+</code></pre>
+</div>
+
+<p>Depois disso, teremos de dar essa permissão ao nosso usuário. Há várias formas de se fazer isso… Abra o arquivo <code class="highlighter-rouge">/etc/sudoers</code> e ao final terá uma sessão para isso. A maneira que prefiro fazer é adicionando meu usuário ao grupo <code class="highlighter-rouge">sudo</code> e assim, tendo todo acesso.</p>
+
+<p>Então, temos de criar o grupo e adicionar nosso usuário a ele:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># groupadd sudo
+gpasswd -a gjuniioor sudo
+</code></pre>
+</div>
+
+<p>E lá no arquivo de configuração que já mostrei (se não lembra, leia novamente, você está fazendo isso errado) podemos descomentar a linha que tem algo como <code class="highlighter-rouge">%sudo ALL=(ALL) ALL</code>.</p>
+
+<h4 id="rede">Rede</h4>
+
+<p>É de suma importância se conectar à internet… Se você utiliza rede wifi, pode fazer isso de forma simples com o <code class="highlighter-rouge">wifi-menu</code>. Se você precisa de conexão cabeada, tem uns pares de tutoriais por ai ensinando sobre isso (inclusive na wiki do Arch, claro).</p>
+
+<p>Agora, sempre que ligamos o computador teremos de rodar o <code class="highlighter-rouge">wifi-menu</code> ou seja lá qual programa use para se conectar? Claro que não… Basta dizer ao sistema para sempre que ligar já buscar pelas redes que já fez login. Apenas execute:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ ip addr
+</code></pre>
+</div>
+
+<p>Com esse comando saberemos os nomes das nossas interfaces de rede (já que o padrão foi alterado e ainda não encontrei um motivo bacana para isso ou uma forma legal de reverter) que iremos usar para o comando, veja:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>systemctl enable netctl-auto@interface_wifi
+systemctl enable netctl-ifplugd@interface_ethernet
+</code></pre>
+</div>
+
+<h4 id="yaourt">Yaourt</h4>
+
+<p>Já falei sobre o <strong>AUR</strong> aqui. O <code class="highlighter-rouge">yaourt</code> é basicamente um “Pacman” que vai utilizar esse repositório. Bacana, não?! Vamos instalar ele…</p>
+
+<p>Abra o arquivo <code class="highlighter-rouge">/etc/pacman.conf</code> e insira isso ao final:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>[archlinuxfr]
+SigLevel = Never
+Server = http://repo.archlinux.fr/$arch
+</code></pre>
+</div>
+
+<p>Em seguida, atualize a lista dos servidores e instale o programa:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># pacman -Sy
+# pacman -S yaourt
+</code></pre>
+</div>
+
+<h4 id="xorg">Xorg</h4>
+
+<p>Como nem do de linha de comando vive o homem, talvez precisaremos do X instalado e rodando. Então, vamos ver o que fazer… O primeiro passo sobre isso é instalar os servidores e demais programas necessários.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># pacman -S xorg xorg-xinit
+</code></pre>
+</div>
+
+<p>Pronto, já está ok! Ao menos o servidor… Agora precisaremos do <em>window manager</em> ou um <em>desktop eviroment</em> se preferir.</p>
+
+<h6 id="teclado-para-o-x">Teclado para o X</h6>
+
+<p>Eu disse que quando chegasse o momento eu falaria. Já que instalou o servidor é porque vai rodar ambiente gráfico em algum momento. Então, precisará do teclado devidamente configurado quando for usar isso… Basta editar o arquivo <code class="highlighter-rouge">/usr/share/X11/xorg.conf.d/10-evdev.conf</code> adicionando isso:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Section “InputClass”
+Identifier “evdev keyboard catchall”
+MatchIsKeyboard “on”
+MatchDevicePath “/dev/input/event*”
+Driver “evdev”
+Option “XkbLayout” “br”
+Option “XkbVariant” “abnt2"
+EndSection
+</code></pre>
+</div>
+
+<p>X pronto, prosseguimos!</p>
+
+<h4 id="i3-window-manager">i3 Window Manager</h4>
+
+<p>Seguindo a ideia de que o Arch é uma distro minimalista (e eu adoro isso) o i3 é um window manager de alta qualidade, simples de configurar, leve… Ou seja, se viesse com pizza seria perfeito! Vamos instalar ele:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># pacman -S i3 dmenu
+</code></pre>
+</div>
+
+<p>OBS: O i3 usa o <code class="highlighter-rouge">dmenu</code> como um laucher, então, é legal ter para facilitar a vida.</p>
+
+<p>Agora, adicione a linha para executar o i3 ao iniciar o x: <code class="highlighter-rouge">echo "exec i3" &gt; ~/.xinitrc</code>.</p>
+
+<p>Para rodar basta chamar o <code class="highlighter-rouge">startx</code>.</p>
+
+<p>Possa ser que precise de um terminal quando vai para o X, então, recomendo a instalação do Xterm: <code class="highlighter-rouge">pacman -S xterm</code>.</p>
+
+<p>Não vou mostrar aqui como personalizar o i3 pois já tem um material muito bom que passarei a você. Recomendo que termine esse post para depois prosseguir para o do i3: <a href="http://i3wm.org/docs/userguide.html">Link User Guide</a>. Deixo aqui também a sugestão dos meus arquivos de configuração: <a href="https://github.com/gjuniioor/i3wm-files">Github</a>.</p>
+
+<h4 id="udio">Áudio</h4>
+
+<p>Vamos deixar o áudio funcionando para caso precisemos daquela empolgação com a música… Precisamos então do <code class="highlighter-rouge">alsa</code> e do <code class="highlighter-rouge">pulse</code> trabalhando lindamente. Vamos:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># pacman -S alsa-lib alsa-utils alsa-firmware alsa-plugins pulseaudio-alsa pulseaudio
+# pacman -S pamixer
+# pacman -S cmus vlc
+</code></pre>
+</div>
+
+<p>A primeira linha instala os programas necessários para rodar o som. A segunda é um mixer via linha de comando que eu decidi testar e estou gostando. E na terceira, já dá para perceber que se trata de reprodutores, certo?! O <code class="highlighter-rouge">cmus</code> é um reprodutor de áudios feito para CLI. O <code class="highlighter-rouge">VLC</code> dispensa apresentações.</p>
+
+<p>Talvez você precise adicionar para o <code class="highlighter-rouge">pulseaudio</code> ser executado ao iniciar o i3. Talvez não… De qualquer forma, teste, se precisar, basta fazer isso:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ echo 'exec --no-startup-id "pulseaudio --start' &gt;&gt; ~/.i3/config
+</code></pre>
+</div>
+
+<p>Para adicionar um ícone informando sobre o status do volume, pode configurar mexendo em um arquivo (e o guia do i3 mostra como) ou pode simplesmente copiar meu arquivo de configuração para você: <a href="https://github.com/gjuniioor/i3wm-files">Github</a>.</p>
+
+<h4 id="programas-usuais">Programas usuais</h4>
+
+<p>Irei adicionar aqui alguns programas que são importantes e bastante úteis se ter… Os softwares contidos aqui são de minha escolha pessoal, ou seja, são que eu gosto, fique a vontade para preencher como quiser. Vejamos:</p>
+
+<h6 id="compressores">Compressores</h6>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># pacman -S tar gzip bzip2 unzip unrar p7zip
+</code></pre>
+</div>
+
+<h6 id="browser">Browser</h6>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># pacman -S luakit firefox
+</code></pre>
+</div>
+
+<h6 id="compatibilidade-de-disco">Compatibilidade de disco</h6>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># pacman -S ntfs-3g dosfstools
+</code></pre>
+</div>
+
+<h6 id="downloaders">Downloaders</h6>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># pacman -S wget curl
+</code></pre>
+</div>
+
+<h6 id="pdf-viewer">PDF Viewer</h6>
+
+<p>Gostaria de comentar sobre essa seção em especial… Tem uma aplicação para leitura de PDF no modo gráfico que é bem leve e gosto dela:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># pacman -S epdfview
+</code></pre>
+</div>
+
+<p>Mas as vezes me dá na telha a vontade de usar o console puro. Portanto, as vezes leio pdf por ele. Então, é preciso o programa <code class="highlighter-rouge">fbgs</code> que está no pacote <code class="highlighter-rouge">fbida</code> para rodar. Então:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># pacman -S fbida
+</code></pre>
+</div>
+
+<p>Mas ele precisa de um outro (o famoso <code class="highlighter-rouge">ghostscript</code>) para gerar o que você vai visualizar:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># pacman -S ghostscript
+</code></pre>
+</div>
+
+<h6 id="demais">Demais</h6>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># pacman -S bash-completion
+</code></pre>
+</div>
+
+<p>Com esse programa, ele já configura automaticamente o autocomplete ao pressionar TAB de diversos comandos, como <code class="highlighter-rouge">man</code>, <code class="highlighter-rouge">info</code>, <code class="highlighter-rouge">whereis</code> e demais…</p>
+
+<h2 id="concluso">Conclusão</h2>
+
+<p>Então pessoal, é isso… Tem mais coisas que uso, claro!, como por exemplo o Vim, Transmission… Mas isso fica para outros posts pois são mais extensos e aqui está o básico para deixar funcional e já redondo. Fiquem a vontade para criticar se quiserem.</p>
+
+<p>Não deixem de ver meus dotfiles no <a href="https://github.com/gjuniioor">Github</a> para caso queiram usar eles.</p>
+
+<p>Até mais ver!</p>
+
+<h2 id="update">Update</h2>
+
+<ul>
+  <li>
+    <p>Inserido o pacote <code class="highlighter-rouge">dosfstools</code> na seção relacionada a compatibilidade de discos. Com ele, é possível formatar partições com o padrão FAT.</p>
+  </li>
+  <li>
+    <p>Adicionada a seção <em>Demais</em> que cita programas extras que são bem úteis para uso de forma geral.</p>
+  </li>
+  <li>
+    <p>Corrigido o nome do arquivo de <code class="highlighter-rouge">~/.xinit</code> para <code class="highlighter-rouge">~/.xinitrc</code>. Obrigado, <a href="http://www.vivaolinux.com.br/~z3lost" target="_blank">z3lost</a>, pela observação!</p>
+  </li>
+</ul>

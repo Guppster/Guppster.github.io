@@ -1,23 +1,40 @@
 ---
-layout: default
+layout: content
 ---
 
-<div class="home">
+<pre>
+<span class="comment">/*
+    Hey you guys, how are you?
+    This is a simple website just to link some good content 
+*/</span>
 
-  <h1 class="page-heading">Posts</h1>
+<span class="reserved">char</span> 
+home (<span class="reserved">void</span>){
+    <span class="comment">/* Just a explain about this */</span>
+}
+<span class="reserved">char</span> 
+blog (<span class="reserved">void</span>){
+    <span class="comment">/* Posts, just it */</span>
+}
+<span class="reserved">char</span> 
+books (<span class="reserved">void</span>){
+    <span class="comment">/* Reviews about books */</span>
+}
+<span class="reserved">char</span>
+casts (<span class="reserved">void</span>) {
+    <span class="comment">/* Podcasts, webcasts */</span>
+}
+<span class="reserved">char</span> 
+movies (<span class="reserved">void</span>){
+    <span class="comment">/* Reviews about movies, documentaries, series */</span>
+}
+<span class="reserved">char</span> 
+talks (<span class="reserved">void</span>){
+    <span class="comment">/* Files presentations of talks */</span>
+}
+<span class="reserved">char</span>
+zines (<span class="reserved">void</span>) {
+    <span class="comment">/* Magazines, e-zines */</span>
+}
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
-</div>
+</pre>
