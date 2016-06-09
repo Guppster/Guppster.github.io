@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # My Website
 
 https://gjuniioor.github.io
@@ -15,3 +16,17 @@ In this website you can see [posts](https://gjuniioor.github.io/blog/) (in brazi
 Have too reviews about [movies](https://gjuniioor.github.io/movies) and [books](https://gjuniioor.github.io/books) and lists of [podcasts](https://gjuniioor.github.io/casts), [screencasts](https://gjuniioor.github.io/casts) and [zines](https://gjuniioor.github.io/zines) that I follow.
 
 [My talks](https://gjuniioor.github.io/talks) too. :)
+=======
+# My Personal Website
+
+GurpreetSingh.me
+
+##About
+
+I am using Github Pages with Jekyll to make my website.
+
+##Content
+
+This website will have information about me, my past experiences and projects im working on.
+
+>>>>>>> 4886c310ab08f12b08dea3989a7a236c79e3bbea
