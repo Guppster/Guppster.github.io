@@ -9,13 +9,13 @@
 
   <title>
     
-      404: Page not found &middot; Heiswayi Nrird on Tech
+      Minify CSS On The Fly &middot; Heiswayi Nrird on Tech
     
   </title>
 
   
-    <meta name="description" content=""/>
-    <meta name="keywords" content="">
+    <meta name="description" content="Simple trick to minify CSS on-the-fly using PHP."/>
+    <meta name="keywords" content="web optimization, css compression, css minification">
   
   <meta name="author" content="Heiswayi Nrird">
 
@@ -23,16 +23,16 @@
   <meta name="twitter:site" content="@HeiswayiNrird">
   <meta name="twitter:creator" content="@HeiswayiNrird">
   
-    <meta name="twitter:title" content="404: Page not found">
-    <meta name="twitter:description" content="">
+    <meta name="twitter:title" content="Minify CSS On The Fly">
+    <meta name="twitter:description" content="Simple trick to minify CSS on-the-fly using PHP.">
   
 
   <meta property="og:type" content="website"/>
   
-    <meta property="og:title" content="404: Page not found"/>
-    <meta property="og:url" content="/404.html"/>
-    <meta property="og:description" content=""/>
-    <meta property="og:site_name" content="404: Page not found"/>
+    <meta property="og:title" content="Minify CSS On The Fly"/>
+    <meta property="og:url" content="/minify-css-on-the-fly.html"/>
+    <meta property="og:description" content="Simple trick to minify CSS on-the-fly using PHP."/>
+    <meta property="og:site_name" content="Minify CSS On The Fly"/>
   
 
   <link rel="apple-touch-icon" sizes="57x57" href="/public/icons/apple-icon-57x57.png">
@@ -114,10 +114,88 @@
       </div>
 
       <div class="container content">
-        <div class="page">
-  <h1 class="page-title">404: Page not found</h1>
-  <p class="lead">Sorry, we've misplaced that URL or it's pointing to something that doesn't exist. <a href="/">Head back home</a> to try finding it again.</p>
+        <div class="post">
+  <div class="post-top-meta">
+    <div class="post-date">September 21, 2015 &middot; <span class="reading-time" title="Estimated Reading Time">
+  
+  
+    1 minute read
+  
+</span>
 </div>
+    <h1 class="post-title">Minify CSS On The Fly</h1>
+  </div>
+
+  <div class="hrline"></div>
+
+  <blockquote>
+  <p>Did you know that if you’re developing a website in PHP, you can minify your CSS code on the fly?</p>
+</blockquote>
+
+<p>CSS minification or compression is one of the rules for optimizing a web page loading performance. Here’s a simple trick that we can do to minify a bunch of CSS files on the fly by using a single PHP file.</p>
+
+<p>Assuming I have a bunch of CSS files such as <strong>grid.css</strong>, <strong>typography.css</strong>, <strong>button.css</strong>, <strong>form.css</strong>, <strong>table.css</strong>, etc. in a directory called <code class="highlighter-rouge">\assets\css\</code>. Then I create a PHP file in the same directory and name it as <code class="highlighter-rouge">minified.css.php</code>.</p>
+
+<p><strong>minified.css.php</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="nb">header</span><span class="p">(</span><span class="s1">'Content-type: text/css'</span><span class="p">);</span>
+<span class="nb">ob_start</span><span class="p">(</span><span class="s2">"compress"</span><span class="p">);</span>
+
+  <span class="k">function</span> <span class="nf">compress</span><span class="p">(</span><span class="nv">$buffer</span><span class="p">)</span> <span class="p">{</span>
+    <span class="cm">/* remove comments */</span>
+      <span class="nv">$buffer</span> <span class="o">=</span> <span class="nb">preg_replace</span><span class="p">(</span><span class="s1">'!/\*[^*]*\*+([^/][^*]*\*+)*/!'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="nv">$buffer</span><span class="p">);</span>
+
+      <span class="cm">/* remove tabs, spaces, newlines, etc. */</span>
+      <span class="nv">$buffer</span> <span class="o">=</span> <span class="nb">str_replace</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s2">"</span><span class="se">\r\n</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"</span><span class="se">\r</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"</span><span class="se">\t</span><span class="s2">"</span><span class="p">,</span> <span class="s1">'  '</span><span class="p">,</span> <span class="s1">'    '</span><span class="p">,</span> <span class="s1">'    '</span><span class="p">),</span> <span class="s1">''</span><span class="p">,</span> <span class="nv">$buffer</span><span class="p">);</span>
+
+      <span class="k">return</span> <span class="nv">$buffer</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="cm">/* css files for compression */</span>
+  <span class="k">include</span><span class="p">(</span><span class="s1">'grid.css'</span><span class="p">);</span>
+  <span class="k">include</span><span class="p">(</span><span class="s1">'typography.css'</span><span class="p">);</span>
+  <span class="k">include</span><span class="p">(</span><span class="s1">'button.css'</span><span class="p">);</span>
+  <span class="k">include</span><span class="p">(</span><span class="s1">'form.css'</span><span class="p">);</span>
+  <span class="k">include</span><span class="p">(</span><span class="s1">'table.css'</span><span class="p">);</span>
+  <span class="k">include</span><span class="p">(</span><span class="s1">'backgrounds.css'</span><span class="p">);</span>
+  <span class="k">include</span><span class="p">(</span><span class="s1">'pagination.css'</span><span class="p">);</span>
+  <span class="k">include</span><span class="p">(</span><span class="s1">'breadcrumbs.css'</span><span class="p">);</span>
+  <span class="k">include</span><span class="p">(</span><span class="s1">'font.css'</span><span class="p">);</span>
+  <span class="k">include</span><span class="p">(</span><span class="s1">'helpers.css'</span><span class="p">);</span>
+  <span class="k">include</span><span class="p">(</span><span class="s1">'print.css'</span><span class="p">);</span>
+  <span class="k">include</span><span class="p">(</span><span class="s1">'animation.css'</span><span class="p">);</span>
+  <span class="k">include</span><span class="p">(</span><span class="s1">'responsive.css'</span><span class="p">);</span>
+
+<span class="nb">ob_end_flush</span><span class="p">();</span>
+<span class="cp">?&gt;</span>
+</code></pre>
+</div>
+
+<p>The PHP code above will include all those CSS files, minify them, and output itself as a functional CSS-compressed file.</p>
+
+<p>This is how we put <strong>minified.css.php</strong> file in our HTML <code class="highlighter-rouge">&lt;head&gt;</code> section:</p>
+
+<pre><code class="language-HTML">&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;title&gt;My Website&lt;/title&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=9"&gt;
+
+    &lt;link href="assets/css/minified.css.php" rel="stylesheet"&gt;
+
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;!-- website content --&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>Have a try and good luck!</p>
+
+  
+</div>
+<div class="back"><a href="/notes.html"><i class="fa fa-chevron-left"></i> Back</a></div>
 
       </div>
     </div>

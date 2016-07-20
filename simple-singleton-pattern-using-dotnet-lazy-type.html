@@ -9,13 +9,13 @@
 
   <title>
     
-      404: Page not found &middot; Heiswayi Nrird on Tech
+      Simple Singleton Pattern Using .NET 4's Lazy Type &middot; Heiswayi Nrird on Tech
     
   </title>
 
   
-    <meta name="description" content=""/>
-    <meta name="keywords" content="">
+    <meta name="description" content="This singleton pattern is simple and performs well, best used with time-consuming operation class."/>
+    <meta name="keywords" content="singleton pattern, .net 4, laziness, lambda expression">
   
   <meta name="author" content="Heiswayi Nrird">
 
@@ -23,16 +23,16 @@
   <meta name="twitter:site" content="@HeiswayiNrird">
   <meta name="twitter:creator" content="@HeiswayiNrird">
   
-    <meta name="twitter:title" content="404: Page not found">
-    <meta name="twitter:description" content="">
+    <meta name="twitter:title" content="Simple Singleton Pattern Using .NET 4's Lazy Type">
+    <meta name="twitter:description" content="This singleton pattern is simple and performs well, best used with time-consuming operation class.">
   
 
   <meta property="og:type" content="website"/>
   
-    <meta property="og:title" content="404: Page not found"/>
-    <meta property="og:url" content="/404.html"/>
-    <meta property="og:description" content=""/>
-    <meta property="og:site_name" content="404: Page not found"/>
+    <meta property="og:title" content="Simple Singleton Pattern Using .NET 4's Lazy Type"/>
+    <meta property="og:url" content="/simple-singleton-pattern-using-dotnet-lazy-type.html"/>
+    <meta property="og:description" content="This singleton pattern is simple and performs well, best used with time-consuming operation class."/>
+    <meta property="og:site_name" content="Simple Singleton Pattern Using .NET 4's Lazy Type"/>
   
 
   <link rel="apple-touch-icon" sizes="57x57" href="/public/icons/apple-icon-57x57.png">
@@ -114,10 +114,76 @@
       </div>
 
       <div class="container content">
-        <div class="page">
-  <h1 class="page-title">404: Page not found</h1>
-  <p class="lead">Sorry, we've misplaced that URL or it's pointing to something that doesn't exist. <a href="/">Head back home</a> to try finding it again.</p>
+        <div class="post">
+  <div class="post-top-meta">
+    <div class="post-date">May 05, 2016 &middot; <span class="reading-time" title="Estimated Reading Time">
+  
+  
+    1 minute read
+  
+</span>
 </div>
+    <h1 class="post-title">Simple Singleton Pattern Using .NET 4's Lazy Type</h1>
+  </div>
+
+  <div class="hrline"></div>
+
+  <p>Nowadays, most of the Microsoft .NET based applications are using .NET 4 or higher. When talking about Singleton pattern, this way of implementation is my favorite - using the <code class="highlighter-rouge">System.Lazy&lt;T&gt;</code> type.</p>
+
+<p>All you need to do is pass a delegate to the constructor which calls the Single constructor, which is done most easily with a lambda expression.</p>
+
+<p>Let say I have a class called <code class="highlighter-rouge">SayHello.cs</code> with the Singleton pattern:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">SingletonExample</span>
+<span class="p">{</span>
+    <span class="k">class</span> <span class="nc">SayHello</span>
+    <span class="p">{</span>
+        <span class="k">private</span> <span class="k">static</span> <span class="k">readonly</span> <span class="n">Lazy</span><span class="p">&lt;</span><span class="n">SayHello</span><span class="p">&gt;</span> <span class="n">lazy</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Lazy</span><span class="p">&lt;</span><span class="n">SayHello</span><span class="p">&gt;(()</span> <span class="p">=&gt;</span> <span class="k">new</span> <span class="nf">SayHello</span><span class="p">());</span>
+        <span class="k">public</span> <span class="k">static</span> <span class="n">SayHello</span> <span class="n">Instance</span> <span class="p">{</span> <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="n">lazy</span><span class="p">.</span><span class="n">Value</span><span class="p">;</span> <span class="p">}</span> <span class="p">}</span>
+
+        <span class="nf">SayHello</span><span class="p">()</span>
+        <span class="p">{</span>
+        <span class="p">}</span>
+
+        <span class="k">public</span> <span class="k">void</span> <span class="nf">Test</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Hello hello hello!"</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>And here my main program that will execute a function from <code class="highlighter-rouge">SayHello.cs</code> class:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">SingletonExample</span>
+<span class="p">{</span>
+    <span class="k">class</span> <span class="nc">Program</span>
+    <span class="p">{</span>
+        <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">SayHello</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="nf">Test</span><span class="p">();</span>
+
+            <span class="n">Console</span><span class="p">.</span><span class="nf">ReadLine</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>Here’s the output:</p>
+
+<p><img src="http://i.imgur.com/Vnbsea3.png" alt="SingletonExample" /></p>
+
+<p>This singleton pattern is simple and performs well, best used with time-consuming operation class.</p>
+
+  
+</div>
+<div class="back"><a href="/notes.html"><i class="fa fa-chevron-left"></i> Back</a></div>
 
       </div>
     </div>
