@@ -1,23 +1,33 @@
 # Site settings
-title: "Gurpreet Singh"
-bye_message: "Thx!"
-baseurl: "/"
-url: "https://guppster.github.io"
-disqus: Gurpreet Singh
+# =============
+title: "Heiswayi Nrird on Tech"
+tagline: Another Software Guy's Blog
+email: hnrird@gmail.com
+description: "1+1=3 is always TRUE in my world, a balance between binary and reality."
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site
 
-# Header settings
-nick: "Gurpreet Singh"
-mail:
-    domain: "protonmail"
-    ext: "ch"
-source_code: 
-    server: "github.com"
-    nick: "guppster"
-blog: 
-    server: "wordpress.com"
-    nick: "guppster"
-fingerprint_key: "5E12 9ABC C2A9 564B C048  2DF9 D327 0D10 BC71 CF75"
+author:
+  name: Heiswayi Nrird
+  email: hnrird@gmail.com
+  url: http://heiswayi.github.io/about.html
+
+github:
+  repo: https://github.com/heiswayi/heiswayi.github.io
+
+twitter:
+  username: HeiswayiNrird
+
+google_analytics: UA-58296043-7
 
 # Build settings
+# ==============
+source: ./
+destination: ../heiswayi.github.io/
+
 markdown: kramdown
-permalink: /:categories/:title/
+highlighter: rouge
+
+exclude: [README.md, LICENSE.md]
+permalink: none
+timezone: Asia/Kuala_Lumpur

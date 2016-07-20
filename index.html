@@ -1,27 +1,167 @@
 ---
-layout: content
+layout: default
+title: Home
 ---
 
-<pre>
-<span class="comment">/*
-    Hey guys, how are you?
-    This is a simple website to display some information about myself
-*/</span>
+<div class="posts">
+  <h2>My Recent Notes</h2>
+  {% for post in site.posts limit:5 %}
+    <div class="post-list">
+      <div class="post-list-date"><small>{{ post.date | date: "%b %d, %Y" }}</small></div>
+	    <div class="text-truncate"><a href="{{ post.url }}">{{ post.title }}</a></div>
+      <div class="post-list-desc">{{ post.description }}</div>
+    </div>
+  {% endfor %}
+  <a class="more-notes" href="/notes.html">more notes</a> <a class="more-notes" href="/archives.html">archives by years</a>
+</div>
 
-<span class="reserved">char</span> 
-home (<span class="reserved">void</span>){
-    <span class="comment">/* This page*/</span>
-}
-<span class="reserved">char</span> 
-projects (<span class="reserved">void</span>){
-    <span class="comment">/* Some projects iv worked on*/</span>
-}
-<span class="reserved">char</span> 
-experience (<span class="reserved">void</span>){
-    <span class="comment">/* My past experiences */</span>
-}
-<span class="reserved">char</span>
-Other (<span class="reserved">void</span>) {
-    <span class="comment">/* Other information about myself */</span>
-}
-</pre>
+<div class="hrline"></div>
+
+<div class="posts">
+  <h2>Apps &amp; Projects</h2>
+  <div class="grid">
+    <div class="grid-sizer"></div>
+
+    <div class="project-list grid-item">
+      <div class="project-list-category"><small>HTML, JS</small></div>
+	    <div class="project-title"><a href="http://heiswayi.github.io/pgp/">PGP Key Generator Online</a></div>
+      <div class="project-list-desc">A simple and easy to use client-side PGP key generator.</div>
+      <div class="project-source"><a href="https://github.com/heiswayi/pgp">source code</a></div>
+    </div>
+
+    <div class="project-list grid-item">
+      <div class="project-list-category"><small>HTML, JS</small></div>
+	    <div class="project-title"><a href="http://heiswayi.github.io/wce">Web Content Encryption (WCE)</a></div>
+      <div class="project-list-desc">Web Content Encryption (WCE) is a JavaScript encryption tool based on Gibberish AES to encrypt/decrypt your web content or message and it is embeddable into your site.</div>
+      <div class="project-source"><a href="https://github.com/heiswayi/wce">source code</a></div>
+    </div>
+
+    <div class="project-list grid-item">
+      <div class="project-list-category"><small>HTML, JS</small></div>
+	    <div class="project-title"><a href="http://heiswayi.github.io/markdown-editor">Live Preview Markdown Editor</a></div>
+      <div class="project-list-desc">Live Preview Markdown Editor with a GitHub-flavored Markdown.</div>
+      <div class="project-source"><a href="https://github.com/heiswayi/markdown-editor">source code</a></div>
+    </div>
+
+    <div class="project-list grid-item">
+      <div class="project-list-category"><small>HTML, JS</small></div>
+	    <div class="project-title"><a href="http://heiswayi.github.io/random-name-picker">Random Name Picker</a></div>
+      <div class="project-list-desc">This is a simple HTML tool written with JavaScript to randomly pick a name from a list. The name that has been picked is removable from the list. This is useful for indoor event/party.</div>
+      <div class="project-source"><a href="https://github.com/heiswayi/random-name-picker">source code</a></div>
+    </div>
+
+    <div class="project-list grid-item">
+      <div class="project-list-category"><small>HTML</small></div>
+	    <div class="project-title"><a href="http://heiswayi.github.io/mit-license">MIT License Online</a></div>
+      <div class="project-list-desc">Your own MIT license that you can always link to.</div>
+      <div class="project-source"><a href="https://github.com/heiswayi/mit-license">source code</a></div>
+    </div>
+
+    <div class="project-list grid-item">
+      <div class="project-list-category"><small>HTML, JS</small></div>
+	    <div class="project-title"><a href="http://heiswayi.github.io/math-console">Math Console</a></div>
+      <div class="project-list-desc">Math Console is a Mathematical-powered console to evaluate basic arithmetic operations, common math functions and also to convert a math unit to another. Some constants are supported too.</div>
+      <div class="project-source"><a href="https://github.com/heiswayi/math-console">source code</a></div>
+    </div>
+
+    <div class="project-list grid-item">
+      <div class="project-list-category"><small>PHP</small></div>
+	    <div class="project-title"><a href="http://heiswayi.github.io/w4y1">W4Y1</a></div>
+      <div class="project-list-desc">My own Artificial Intelligence (AI) chatter bot program built to represent a fragment of my knowledge and memories.</div>
+      <div class="project-source"><a href="https://github.com/heiswayi/w4y1">source code</a></div>
+    </div>
+
+    <div class="project-list grid-item">
+      <div class="project-list-category"><small>PHP</small></div>
+	    <div class="project-title">Wayi's Private Web Proxy</div>
+      <div class="project-list-desc">My super simple web proxy! The intention of this service is for my personal use purpose. However, it's publicly accessible and you're free to use it at your own risk.</div>
+      <div class="project-source"><a href="https://github.com/heiswayi/private-web-proxy">source code</a></div>
+    </div>
+
+    <div class="project-list grid-item">
+      <div class="project-list-category"><small>PHP</small></div>
+	    <div class="project-title">My URL Shortener</div>
+      <div class="project-list-desc">Known as "L" which stands for Linker, it's my public URL shortening service. Originally built for my personal use purpose, but available freely to the public usage.</div>
+      <div class="project-source"><a href="https://github.com/heiswayi/l">source code</a></div>
+    </div>
+
+    <div class="project-list grid-item">
+      <div class="project-list-category"><small>PHP</small></div>
+	    <div class="project-title">Code Snippets Saver</div>
+      <div class="project-list-desc">An experimental multi-user PHP application to save code snippets with automatic syntax-highlighting based on predefined categories. The code snippets can be shared publicly or saved privately for personal use.</div>
+      <div class="project-source"><a href="https://github.com/heiswayi/code-snippets-saver">source code</a></div>
+    </div>
+
+    <div class="project-list grid-item">
+      <div class="project-list-category"><small>PHP</small></div>
+	    <div class="project-title">Online Dummy Image Generator</div>
+      <div class="project-list-desc">Simply generate dummy image online for your design mockup/sample and directly hotlinking it.</div>
+      <div class="project-source"><a href="https://github.com/heiswayi/dummy-imagen">source code</a></div>
+    </div>
+
+    <div class="project-list grid-item">
+      <div class="project-list-category"><small>PHP</small></div>
+	    <div class="project-title">ZeroPaste</div>
+      <div class="project-list-desc">A zero-knowledge pastebin. The data is encrypted/decrypted in the browser using 256-bits AES.</div>
+      <div class="project-source"><a href="https://github.com/heiswayi/zeropaste">source code</a></div>
+    </div>
+
+    <div class="project-list grid-item">
+      <div class="project-list-category"><small>PHP</small></div>
+	    <div class="project-title">File Source Code Viewer</div>
+      <div class="project-list-desc">This is a simple tool to view the source code of a <code>.phps</code> file remotely and embeddable into your site content. Other NON server-side files like <code>.js</code>, <code>.css</code>, <code>.html</code>, etc. also can be used with this tool.</div>
+      <div class="project-source"><a href="https://github.com/heiswayi/source-code-viewer">source code</a></div>
+    </div>
+
+    <div class="project-list grid-item">
+      <div class="project-list-category"><small>HTML, JS</small></div>
+	    <div class="project-title"><a href="http://heiswayi.github.io/color-contrast-checker">Color Contrast Checker</a></div>
+      <div class="project-list-desc">A simple tool to evaluate and check your color contrast between foreground and background colors.</div>
+      <div class="project-source"><a href="https://github.com/heiswayi/color-contrast-checker">source code</a></div>
+    </div>
+
+    <div class="project-list grid-item">
+      <div class="project-list-category"><small>HTML, JS</small></div>
+	    <div class="project-title"><a href="http://heiswayi.github.io/spelling-uk-vs-us">Spelling: UK vs US</a></div>
+      <div class="project-list-desc">A comprehensive* list of British and American spelling differences.</div>
+      <div class="project-source"><a href="https://github.com/heiswayi/spelling-uk-vs-us">source code</a></div>
+    </div>
+
+    <div class="project-list grid-item">
+      <div class="project-list-category"><small>Jekyll</small></div>
+	    <div class="project-title"><a href="http://heiswayi.github.io/the-plain">The Plain</a></div>
+      <div class="project-list-desc">A minimalist Jekyll theme that focuses on writing matters.</div>
+      <div class="project-source"><a href="https://github.com/heiswayi/the-plain">source code</a></div>
+    </div>
+
+    <div class="project-list grid-item">
+      <div class="project-list-category"><small>JS, PHP</small></div>
+	    <div class="project-title">Webpage Screenshot Mockup Generator</div>
+      <div class="project-list-desc">Generate a webpage screenshot automatically with Google Chrome browser-like frame.</div>
+      <div class="project-source"><a href="https://github.com/heiswayi/webpage-screenshot">source code</a></div>
+    </div>
+
+    <div class="project-list grid-item">
+      <div class="project-list-category"><small>HTML, JS</small></div>
+	    <div class="project-title"><a href="http://heiswayi.github.io/instagram-photo-likes-checker">Instagram Photo Likes Checker</a></div>
+      <div class="project-list-desc">Find out who liked your Instagram photos the most. Made using Instagram API.</div>
+      <div class="project-source"><a href="https://github.com/heiswayi/instagram-photo-likes-checker">source code</a></div>
+    </div>
+
+    <div class="project-list grid-item">
+      <div class="project-list-category"><small>JS</small></div>
+	    <div class="project-title"><a href="http://heiswayi.github.io/lets-hike/">Let's Hike! Malaysia</a></div>
+      <div class="project-list-desc">A project to pinpoint the targeted peaks of hiking expeditions on an online map.</div>
+      <div class="project-source"><a href="https://github.com/heiswayi/lets-hike">source code</a></div>
+    </div>
+
+    <div class="project-list grid-item">
+      <div class="project-list-category"><small>JS</small></div>
+	    <div class="project-title"><a href="http://heiswayi.github.io/thinkspace/">Thinkspace</a></div>
+      <div class="project-list-desc">Just another minimalist Jekyll theme that focuses on technical writing.</div>
+      <div class="project-source"><a href="https://github.com/heiswayi/thinkspace">source code</a></div>
+    </div>
+
+  </div><!-- /#grid -->
+  <a class="more-projects" href="https://github.com/heiswayi?tab=repositories">more projects on github</a>
+</div>

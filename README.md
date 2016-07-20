@@ -1,12 +1,27 @@
+# Version 2.x
 
-# My Personal Website
+This repo contains the source code of my site, which is built with [Jekyll](http://jekyllrb.com/) and generously hosted freely on GitHub. Thanks to [Font Awesome](https://fortawesome.github.io/Font-Awesome/) for the awesome icons and [Fira](https://github.com/mozilla/Fira) fonts by **Mozilla** for the awesome typeface.
 
-GurpreetSingh.me
+**Site URL:** [http://heiswayi.github.io](http://heiswayi.github.io)
 
-##About
+### Post Writing Format
 
-I am using Github Pages with Jekyll to make my website.
+**Filename format:** `YYYY-MM-DD-lorem-ipsum-is-here.md`
 
-##Content
+```
+---
+layout: post
+title: Lorem Ipsum is here!
+description: A short brief about what this post is about.
+keywords: keyword1, next keyword2, just keywords
+---
 
-This website will have information about me, my past experiences and projects im working on.
+Lorem ipsum dolor sit amet, commodo diceret interpretaris mel ex, fuisset verterem mel in. Ea nam commodo maiorum nostrum, quo quem erat veniam at. Eos populo gloriatur et, per vero aeterno hendrerit cu. Id hendrerit efficiantur eum, aliquid euripidis ea nam, oblique virtute eam ex. Vis eu dicta possim facilisis, delenit hendrerit cum ne.
+```
+
+# License
+
+`_post/` and `images/` folders are copyrights of **Heiswayi Nrird** (that's me). You may not reuse anything therein without my permission. Everything else is [MIT licensed](LICENSE.md), unless otherwise stated.
+
+---
+Handcrafted by [Heiswayi Nrird](http://heiswayi.github.io) with love.

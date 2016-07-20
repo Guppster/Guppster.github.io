@@ -1,0 +1,19 @@
+<div class="footer">
+	<div class="hrline"></div>
+	<div class="license">Unless otherwise stated, all original code presented on this site is licensed under the <a href="http://heiswayi.github.io/mit-license">MIT license</a>. All original photographs and text on this website are licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives</a> license. If you have any questions about using any of this material for commercial purposes, please <a href="https://github.com/heiswayi/ama">ask me here</a> or <a href="mailto:{{ site.author.email }}">write an email to me</a>.</div>
+	<div class="copyright">Made with <span style="color:#e00"><i class="fa fa-heart"></i></span> using <a href="http://jekyllrb.com">Jekyll</a> &middot; <i class="fa fa-code"></i> on <a href="https://github.com/heiswayi/heiswayi.github.io_jekyll_source">GitHub</a> <i class="fa fa-github-alt"></i><br>&copy; {{ site.time | date: "%Y" }} {{ site.author.name }}</div>
+</div>
+
+<script>
+$(window).load(function() {
+	$('.grid').masonry({
+		itemSelector: '.grid-item',
+		columnWidth: '.grid-sizer',
+		gutter: 10
+	});
+});
+</script>
+
+{% if site.google_analytics %}
+	{% include google_analytics.html %}
+{% endif %}
