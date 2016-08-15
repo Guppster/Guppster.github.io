@@ -55,8 +55,8 @@ type-speed: 10
 start-delay: 200
 delete-delay: 5000
 lines: # You can add HTML Tags in the Text
-  - text: "The lower you fall, the higher you'll fly."
-  - text: "Where’s your will to be weird?"
+  - text: "Programming is not a science. Programming is a craft"
+  - text: "If i was a dinosaur i'd be a tyranasurus rex :)" #typo on purpose, learn to meme m8
 
 me-img: "/img/jetpacktocat.png"
 
