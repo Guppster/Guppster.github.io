@@ -31,8 +31,8 @@ force-https: False
 lang: "en"
 author: "Gurpreet Singh"
 title: "{ Gurpreet Singh }"
-description: "Blog and website of Gurpreet Singh, blogging mainly for tech. Opinions expressed are mine."
-keywords: "singh, gurpreet, personal, jekyll, theme"
+description: "Dream in code"
+keywords: "Gurpreet, Singh"
 favicon: "/img/favicon.ico"
 
 ################
