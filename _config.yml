@@ -57,6 +57,9 @@ delete-delay: 5000
 lines: # You can add HTML Tags in the Text
   - text: "Programming is not a science. Programming is a craft"
   - text: "If i was a dinosaur i'd be a tyranasurus rex :)" #typo on purpose, learn to meme m8
+  - text: "Stay zen my friends"
+  - text: "A true man hates no one" 
+  - text: "Death is nothing, but to live defeated and inglorious is to die daily"
 
 me-img: "/img/jetpacktocat.png"
 
