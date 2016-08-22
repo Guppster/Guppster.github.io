@@ -17,5 +17,4 @@ generate-tag
   - Generate all the tags that are used in the \_posts
 
 integrate-personal
-  - Integrates the latest bug fixes and new features from personal-jekyll-theme repository.
-  Make sure to read [this](https://github.com/PanosSakkos/personal-jekyll-theme/wiki/Integrating-latest-bug-fixes-and-features-into-your-past-fork) before using it.
+  - Integrates the latest bug fixes and new features
