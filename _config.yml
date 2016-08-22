@@ -16,7 +16,7 @@ url: "https://gurpreetsingh.me/"
 
 # Google tracking id
 
-#google-tracking-id: ""
+google-tracking-id: ""
 
 # Forces https everywhere in your website, except when you serve it locally
 # If you are not hosted on Github Pages, and your host doesn't support https
