@@ -406,7 +406,7 @@ h4 + p {
 .main-header {
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url(bg.gif); /* main bg image */
+    background-image: url(bg.png); /* main bg image */
     top: 0;
     left: 0;
     width: 100%;
