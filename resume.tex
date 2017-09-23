@@ -1,0 +1,153 @@
+\documentclass[a4paper]{article}
+    \usepackage{fullpage}
+    \usepackage{amsmath}
+    \usepackage{amssymb}
+    \usepackage{textcomp}
+    \textheight=10in
+    \pagestyle{empty}
+    \raggedright
+
+    %\renewcommand{\encodingdefault}{cg}
+%\renewcommand{\rmdefault}{lgrcmr}
+
+\def\bull{\vrule height 0.8ex width .7ex depth -.1ex }
+
+% DEFINITIONS FOR RESUME %%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\area} [2] {
+    \vspace*{-9pt}
+    \begin{verse}
+        \textbf{#1}   #2
+    \end{verse}
+}
+
+\newcommand{\lineunder} {
+    \vspace*{-8pt} \\
+    \hspace*{-18pt} \hrulefill \\
+}
+
+\newcommand{\header} [1] {
+    {\hspace*{-18pt}\vspace*{6pt} \textsc{#1}}
+    \vspace*{-6pt} \lineunder
+}
+
+\newcommand{\employer} [3] {
+    { \textbf{#1} (#2)\\ \underline{\textbf{\emph{#3}}}\\  }
+}
+
+\newcommand{\contact} [3] {
+    \vspace*{-10pt}
+    \begin{center}
+        {\Huge \scshape {#1}}\\
+        #2 \\ #3
+    \end{center}
+    \vspace*{-8pt}
+}
+
+\newenvironment{achievements}{
+    \begin{list}
+        {$\bullet$}{\topsep 0pt \itemsep -2pt}}{\vspace*{4pt}
+    \end{list}
+}
+
+\newcommand{\schoolwithcourses} [4] {
+    \textbf{#1} #2 $\bullet$ #3\\
+    #4 \\
+    \vspace*{5pt}
+}
+
+\newcommand{\school} [4] {
+    \textbf{#1} #2 $\bullet$ #3\\
+    #4 \\
+}
+    % END RESUME DEFINITIONS %%%%%%%%%%%%%%%%%%%%%%%
+
+    \begin{document}
+
+\vspace*{-40pt}
+
+%==== Profile ====%
+\vspace*{-10pt}
+\begin{center}
+	{\Huge \scshape {Gurpreet Singh}}\\
+	720 Deveron Crescent, London, Ont $\cdot$ gurpreet@mailfence.com $\cdot$ 519-317-0782 $\cdot$ GurpreetSingh.me\\
+\end{center}
+
+\vspace*{2mm}
+
+%==== Education ====%
+\header{Education}
+\textbf{University Of Western Ontario}\hfill London, Ontario\\
+Honours Specialisation in Computer Science \hfill Grad: May 2018\\
+\vspace{2mm}
+
+\vspace*{2mm}
+
+%==== Experience ====%
+\header{Experience}
+\vspace{1mm}
+
+\textbf{IBM Canada} \hfill Markham, Ontario\\
+\textit{Infosphere MDM Software Engineer} \hfill May 2016 | August 2017\\
+\vspace{-1mm}
+\begin{itemize} \itemsep 1pt
+	\item Designed and implemented frameworks to assist with end to end regression tests, allowing for continuous build deployment, testing, post processing, reporting, and publishing through each release cycle.
+	\item Lead a team of developers to create a microservice management architecture for the delivery platform and converted existing tools to microservices.
+	\item Presented tutorials on how to use new technologies to the team. Held one on one sessions with developers and managers to explain how to use Git, Docker, etc, and how it could benefit their workflow.
+	\item Worked extensively with DevOps tools like Docker, Travis, Jenkins and Git to develop and deploy tooling.
+\end{itemize}
+
+\textbf{United Steelworkers (USW)} \hfill Toronto, Ontario\\
+\textit{Information Technology Intern} \hfill May 2015 | September 2015\\
+\vspace{-1mm}
+\begin{itemize} \itemsep 1pt
+	\item Developed websites for political representatives.
+	\item Created java applications to automate office tasks.
+	\item Presented weekly analytical reviews of online content.
+\end{itemize}
+
+\textbf{UWO Computer Science Tutoring} \hfill London, Ontario\\
+\textit{Programming Tutor} \hfill June 2013 | September 2014\\
+\vspace{-1mm}
+\begin{itemize} \itemsep 1pt
+	\item Tutoring university students in the subject of Computer Science while still in high school.
+	\item Arranging sessions with students and answering challenging programming problems.
+	\item Researched and implemented new advertising methods to gain more students.
+\end{itemize}
+
+\textbf{Wheable Secondary School} \hfill London, Ontario\\
+\textit{Assistant Teacher} \hfill September 2009 | September 2010\\
+\vspace{-1mm}
+\begin{itemize} \itemsep 1pt
+	\item Taught foreign languages to elementary/high school students.
+	\item Created work sheets and other teaching material
+\end{itemize}
+
+\header{Projects}
+{\textbf{HackingCancer} \sl Java} \hfill HackingCancer.me\\
+Reverse engineered raw cancer research data (gene microdata) and manipulated it into a playable game. The player assists in the analysis of the data. Winner of Western’s Hackathon in 2015. Made in 36 hours.\\
+\vspace*{2mm}
+{\textbf{ARK IOT} \sl Blockchain, Javascript, Kotlin, Hardware} \hfill https://github.com/ArkEcosystem\\
+Opensource project that aims connect IOT devices to the blockchain using on-chain data.\\
+\vspace*{2mm}
+{\textbf{Cloud Drive} \sl C, Valgrind, Redis, TCP/UDP} \hfill https://github.com/Guppster/Drive\\
+Cloud drive networking implementation written in C. Functions like Dropbox.\\
+\vspace*{2mm}
+{\textbf{Microservices-Core} \sl Rust, Go, Kotlin, C, Java} \hfill https://github.com/Guppster/MicroservicesStack\\
+A central microservice management framework that enables microservice deployment, registration, querying and execution.\\
+
+\vspace*{2mm}
+
+\header{Skills}
+\begin{tabular}{ l l }
+	Programming Languages: & Java, C, C\#, Python, Ruby, Lua, Go, Rust, Kotlin    \\
+	DevOps Tools:          & Git, Jenkins, Travis, Docker, Gradle, Maven, Bluemix \\
+\end{tabular}
+
+\vspace*{2mm}
+
+\vspace*{2mm}
+        
+
+\ 
+\end{document}
